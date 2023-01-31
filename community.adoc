@@ -1,0 +1,13 @@
+---
+layout: page
+title: Community
+permalink: /community/
+---
+
+## Welcome
+
+## Discussions
+
+## Events
+
+## Contact Us

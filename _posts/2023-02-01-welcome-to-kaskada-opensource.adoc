@@ -1,0 +1,7 @@
+---
+layout: post
+future: true
+---
+= Welcome to Kaskada Opensource!
+
+Kaskada is now opensource, hurrah!

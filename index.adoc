@@ -1,0 +1,24 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: page
+---
+
+## Kaskada is a query engine for event-based data designed to solve the unique challenges of building & operating real-time ML at scale. 
+
+Kaskada unifies historical and real-time data processing, allowing practitioners to instantly reconstruct the historical results of a query and then deploy the same query as a live materialization without losing historical context.
+
+Kaskada’s unique capabilities are the result of its time-aware query abstractions, a high-performance compute engine, and a configurable execution model supporting bulk and real-time data processing.
+
+
+### Train models
+* Data-dependent, entity-specific time-travel
+* Instant, self-service exploration
+* Point-in-time joins & lookups
+
+
+### Deploy models
+* Unified historical & real-time queries
+* High-performance engine
+* Model performance / drift metrics
