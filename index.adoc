@@ -12,13 +12,44 @@ Kaskada unifies historical and real-time data processing, allowing practitioners
 Kaskada’s unique capabilities are the result of its time-aware query abstractions, a high-performance compute engine, and a configurable execution model supporting bulk and real-time data processing.
 
 
-### Train models
-* Data-dependent, entity-specific time-travel
-* Instant, self-service exploration
-* Point-in-time joins & lookups
+----
+== Train models
 
+====
+.Native Time Travel
+Revisit the result of any query at any point in time.
+Use the same query languge to define what to compute and to when to compute it.
+====
 
-### Deploy models
-* Unified historical & real-time queries
-* High-performance engine
-* Model performance / drift metrics
+====
+.Instant exploration
+Efficiently compute directly from raw events.
+Safely downsample results with input slicing.
+====
+
+====
+.Temporal joins
+Point-in-time operations between results with different groupings.
+Combine results defined at different times as continuous values.
+====
+----
+
+----
+== Deploy models
+
+====
+.Unified queries
+Execute the same query in batch mode over historical data or in incremental mode over real-time streams.
+====
+
+====
+.It's fast
+Compute engine implemented in Rust for performance and safety.
+Computation is built on Apache Arrow for speedy CPU utilization.
+====
+
+====
+.Real-time with history
+Transparently bootstrap real-time queries with the full history of raw events.
+====
+----
