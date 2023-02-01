@@ -16,18 +16,21 @@ Kaskada’s unique capabilities are the result of its time-aware query abstracti
 
 ====
 *Native Time Travel.*
+
 Revisit the result of any query at any point in time.
 Use the same query languge to define what to compute and to when to compute it.
 ====
 
 ====
 *Instant exploration.*
+
 Efficiently compute directly from raw events.
 Safely downsample results with input slicing.
 ====
 
 ====
 *Temporal joins.*
+
 Point-in-time operations between results with different groupings.
 Combine results defined at different times as continuous values.
 ====
