@@ -23,7 +23,7 @@ title: Kaskada
 description: >-
   Kaskada is a query engine for event-based data designed to solve the unique challenges of building & operating real-time ML at scale. 
 url: "https://kaskada-ai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: kaskada
+twitter_username: kaskadainc
 github_username:  kaskada-ai
 
 # Build settings
