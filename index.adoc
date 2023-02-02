@@ -11,6 +11,8 @@ Kaskada unifies historical and real-time data processing, allowing practitioners
 
 Kaskada’s unique capabilities are the result of its time-aware query abstractions, a high-performance compute engine, and a configurable execution model supporting bulk and real-time data processing.
 
+==                                 Create Real-Time ML models using event-based data 
+
 
 == Train Quickly
 
