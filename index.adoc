@@ -5,8 +5,9 @@
 layout: page
 ---
 
-## Kaskada is a query engine for event-based data designed to solve the unique challenges of building & operating real-time ML at scale. 
+## The engine for real-time ML
 
+Kaskada is a query engine for event-based data designed to solve the unique challenges of building & operating real-time ML at scale. 
 Kaskada unifies historical and real-time data processing, allowing practitioners to instantly reconstruct the historical results of a query and then deploy the same query as a live materialization without losing historical context.
 
 Kaskada’s unique capabilities are the result of its time-aware query abstractions, a high-performance compute engine, and a configurable execution model supporting bulk and real-time data processing.
@@ -31,7 +32,7 @@ Safely downsample results with input slicing.
 ====
 *Temporal joins.*
 
-Point-in-time operations between results with different groupings.
+Compute point-in-time operations between differently-grouped results.
 Combine results defined at different times as continuous values.
 ====
 
@@ -40,16 +41,19 @@ Combine results defined at different times as continuous values.
 
 ====
 *Unified queries.*
+
 Execute the same query in batch mode over historical data or in incremental mode over real-time streams.
 ====
 
 ====
 *It's fast.*
+
 Compute engine implemented in Rust for performance and safety.
 Computation is built on Apache Arrow for speedy CPU utilization.
 ====
 
 ====
-*Real-time with history.*
+*Real-time, but with history.*
+
 Transparently bootstrap real-time queries with the full history of raw events.
 ====
