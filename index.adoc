@@ -5,11 +5,11 @@
 layout: page
 ---
 
-= The engine for real-time ML
+== The engine for real-time ML
 
 Kaskada is a query engine for event-based data designed for building & operating real-time ML at scale. 
 
-== Train Quickly
+=== Train Quickly
 
 ====
 *Native Time Travel.*
@@ -33,7 +33,7 @@ Combine results defined at different times as continuous values.
 ====
 
 
-== Deploy Instantly
+=== Deploy Instantly
 
 ====
 *Unified queries.*
