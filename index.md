@@ -15,45 +15,38 @@ layout: page
     </div>
 
     <div class="row mt-5">
-        <div class="col-3">
-            <h3>Native Time Travel.</h3>
+        <div class="col-md-4">
+            <h3>Native time travel</h3>
             <p>Revisit the result of any query at any point in time.</p>
             <p>Use the same query languge to define what to compute and to when to compute it.</p>
         </div>
 
-        <div class="col-3">
-            <h3>Instant exploration.</h3>
-
-            Efficiently compute directly from raw events.
-            Safely downsample results with input slicing.
+        <div class="col-md-4">
+            <h3>Instant exploration</h3>
+            <p>Efficiently compute directly from raw events.</p>
+            <p>Safely downsample results with input slicing.</p>
         </div>
 
-        <div class="col-3">
-            <h3>Unified queries.</h3>
-
-            Execute the same query in batch mode over historical data or in incremental mode over real-time streams.
+        <div class="col-md-4">
+            <h3>Temporal joins</h3>
+            <p>Compute point-in-time operations between differently-grouped results.</p>
+            <p>Combine results defined at different times as continuous values.</p>
         </div>
 
-        <div class="col-3">
-            <h3>It's fast</h3>
-
-            Compute engine implemented in Rust for performance and safety.
-            Computation is built on Apache Arrow for speedy CPU utilization.
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-3">
-            <h3>Temporal joins.</h3>
-
-            Compute point-in-time operations between differently-grouped results.
-            Combine results defined at different times as continuous values.
+        <div class="col-md-4">
+            <h3>Fast results</h3>
+            <p>Compute engine implemented in Rust for performance and safety.</p>
+            <p>Computation is built on Apache Arrow for speedy CPU utilization.</p>
         </div>
 
-        <div class="col-3">
-            <h3>Real-time, but with history.</h3>
+        <div class="col-md-4">
+            <h3>Unified queries</h3>
+            <p>Execute the same query in batch mode over historical data or in incremental mode over real-time streams.</p>
+        </div>
 
-            Transparently bootstrap real-time queries with the full history of raw events.
+        <div class="col-md-4">
+            <h3>Real-time, but with history</h3>
+            <p>Transparently bootstrap real-time queries with the full history of raw events.</p>
         </div>
     </div>
 
