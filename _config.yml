@@ -27,9 +27,10 @@ twitter_username: kaskadainc
 github_username:  kaskada-ai
 
 # Build settings
-theme: minima
-  #plugins:
-  #  - jekyll-feed
+#theme: minima
+remote_theme: aterenin/minima-reboot
+plugins:
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
