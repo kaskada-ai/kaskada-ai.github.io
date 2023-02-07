@@ -10,7 +10,7 @@ layout: page
 
     <div class="row">
         <div class="col-12">
-            <p>Kaskada is a query engine for event-based data designed for building & operating real-time ML at scale.</p>
+            <p>Kaskada is a query engine for event-based data designed for building & operating real-time ML models.</p>
         </div>
     </div>
 
