@@ -17,13 +17,13 @@ layout: page
     <div class="row mt-5">
         <div class="col-md-4">
             <h3>Native time travel</h3>
-            <p>Revisit the result of any query at any point in time.</p>
+            <p>Revisit the result of any feature at any point in time.</p>
             <p>Use the same query languge to define <i>what</i> to compute and to <i>when</i> to compute it.</p>
         </div>
 
         <div class="col-md-4">
             <h3>Instant exploration</h3>
-            <p>Efficiently compute directly from raw events.</p>
+            <p>Generate ML features directly from raw events.</p>
             <p>Safely downsample results with input slicing.</p>
         </div>
 
@@ -46,7 +46,8 @@ layout: page
 
         <div class="col-md-4">
             <h3>Real-time, but with history</h3>
-            <p>Transparently bootstrap real-time queries with the full history of raw events.</p>
+            <p>Transparently bootstrap real-time features with the full history of raw events.</p>
+            <p>Continuously materialize features for real-time inference</p>
         </div>
     </div>
 
