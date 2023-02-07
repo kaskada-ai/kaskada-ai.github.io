@@ -56,7 +56,7 @@ layout: page
     <div class="row">
         <div class="col-6">
             <p>Kaskada unifies historical and real-time data processing, allowing practitioners to instantly reconstruct the historical results of a query and then deploy the same query as a live materialization without losing historical context.</p>
-            <a class="btn btn-primary" href="https://docs.kaskada.com">Get Started</a>
+            <a class="btn btn-primary" href="https://supreme-garbanzo-49gzqye.pages.github.io/kaskada/main/getting-started/hello-world.html">Get Started</a>
         </div>
         <div class="col-6">
             <p>Kaskada’s unique capabilities are the result of its time-aware query abstractions, a high-performance compute engine, and a configurable execution model supporting bulk and real-time data processing.</p>

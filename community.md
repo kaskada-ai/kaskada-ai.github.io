@@ -14,7 +14,7 @@ If you have questions about developing apps or want to learn more about Kaskada,
 
 For news and announcements, follow us on Twitter: [@kaskadainc](https://twitter.com/kaskadainc).
 
-Join the Stargate group on LinkedIn: [@kaskadainc](https://www.linkedin.com/company/kaskadainc).
+Join the Kaskada group on LinkedIn: [@kaskadainc](https://www.linkedin.com/company/kaskadainc).
 
 ## Events
 
