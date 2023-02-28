@@ -18,7 +18,7 @@ layout: page
         <div class="col-md-4">
             <h3>Native time travel</h3>
             <p>Revisit the result of any feature at any point in time.</p>
-            <p>Use the same query languge to define <i>what</i> to compute and to <i>when</i> to compute it.</p>
+            <p>Use the same query languge to define <i>what</i> to compute and <i>when</i> to compute it.</p>
         </div>
 
         <div class="col-md-4">
