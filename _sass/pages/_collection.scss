@@ -1,0 +1,161 @@
+.collection {
+  .hero {
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 0.875rem;
+      line-height: 1.43em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #26364a;
+    }
+
+    @include media-breakpoint-up(lg) {
+      background-image: url("data:image/svg+xml,%3Csvg width='1440' height='165' viewBox='0 0 1440 165' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 121V122.106C466 181.679 1096 171.566 1440 137.901V121H0Z' fill='%23F7F8FA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1440 81.0216H0V77.7973C390.176 -28.8223 614.554 -4.41024 895.01 26.1032C1047.99 42.7468 1217.65 61.2058 1440 61.2058V81.0216Z' fill='%23F7F8FA'/%3E%3Crect y='79' width='1440' height='42' fill='%23F7F8FA'/%3E%3C/svg%3E%0A");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      padding: 3.5rem 0 4.5rem;
+      margin-bottom: 6rem;
+
+      h1 {
+        font-size: 1rem;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .featured {
+    margin: 0 0 4rem;
+
+    img {
+      border-radius: 10px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 1.5rem 0 0;
+
+      h2 {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        color: #26364a;
+        margin: 0 0 1.5rem;
+      }
+
+      p {
+        font-family: "Sora";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1.33em;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #778393;
+        margin: 0 0 2rem;
+      }
+
+      a {
+        font-family: "Sora";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        color: #26364a;
+        margin-top: auto;
+      }
+
+      &--details {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1.5rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+        padding: 0 0 0 2.125rem;
+
+        h2 {
+          font-size: 2rem;
+          line-height: 1.31em;
+          margin: 0 0 2rem;
+        }
+      }
+    }
+  }
+
+  .posts {
+    margin-bottom: 6rem;
+
+    .card--item {
+      overflow: hidden;
+      flex: 1;
+
+      .card-header {
+        padding: 53.4% 0 0;
+        position: relative;
+        background: $white;
+        border: 0;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          font-family: "Noto Sans";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1.125rem;
+          line-height: 1.44em;
+          color: #26364a;
+          margin: 0 0 1rem;
+        }
+
+        p {
+          font-family: "Sora";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 0.75rem;
+          line-height: 1.33em;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #778393;
+          margin: 0 0 2rem;
+        }
+
+        a {
+          font-family: "Sora";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.2em;
+          letter-spacing: 0.05em;
+          color: #26364a;
+          margin-top: auto;
+        }
+
+        @include media-breakpoint-up(lg) {
+          p {
+            margin: 0 0 3rem;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      margin: 3.5rem 0 0;
+    }
+  }
+}

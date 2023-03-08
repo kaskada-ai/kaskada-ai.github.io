@@ -1,0 +1,94 @@
+.navbar {
+  margin-bottom: 2rem;
+  background: #ffffff;
+
+  .navbar-nav {
+    height: calc(var(--window-height, 100%) - 90px); // navbar height without padding
+    padding-top: 3rem;
+    align-items: stretch;
+
+    @include media-breakpoint-up(lg) {
+      height: auto;
+      padding: 0;
+      align-items: center;
+    }
+  }
+
+  .nav-item {
+    .nav-link {
+      font-family: "Sora";
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 1.2em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000000;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.btn {
+        padding: 10px 20px;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: inline-flex;
+      order: 1;
+      margin-bottom: 2rem;
+
+      &--button {
+        order: 200;
+
+        .btn {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &--social {
+        order: 201;
+        margin-top: auto;
+
+        .nav-item {
+          margin: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      &:not(:last-of-type) {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      transition: all 0.2s ease;
+      background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='48' height='48' fill='white'/%3E%3Crect x='6' y='11' width='36' height='3' rx='1.5' fill='%2326364A'/%3E%3Crect x='6' y='22' width='36' height='3' rx='1.5' fill='%2326364A'/%3E%3Crect x='6' y='33' width='36' height='3' rx='1.5' fill='%2326364A'/%3E%3C/svg%3E%0A");
+    }
+
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.5 12.5L12.5 35.5' stroke='black' stroke-width='2'/%3E%3Cpath d='M35.5 35.5L12.5 12.5' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}
+
+.social--nav {
+  justify-content: center;
+  flex: 1;
+
+  .nav-item {
+    &:not(:last-of-type) {
+      margin-right: 4px;
+    }
+  }
+}

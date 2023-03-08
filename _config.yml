@@ -22,7 +22,6 @@ title: Kaskada
 # email: your-email@example.com
 description: >-
   Kaskada is a query engine for event-based data designed to solve the unique challenges of building & operating real-time ML at scale. 
-url: "https://kaskada-ai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kaskadainc
 github_username:  kaskada-ai
 
@@ -31,11 +30,28 @@ collections:
     output: true
       #permalink: /events/:path/
 
-# Build settings
-#theme: minima
-remote_theme: aterenin/minima-reboot
+sass:
+  style: compressed
+  sass_dir: _sass
+  load_paths:
+    - _sass
+
+pagination:
+  enabled: true
+  per_page: 9
+  permalink: '/:num/'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+    before: 2
+    after: 2
+
 plugins:
-  - jekyll-remote-theme
+  - jekyll/vite
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate-v2
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -45,7 +61,18 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - bin
+  - config
+  - vite.config.ts
+  - tmp
+  - Procfile.dev
+  - Rakefile
+  - exe
+  - bin
+  - package.json
+  - package-lock.json
+  - README.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

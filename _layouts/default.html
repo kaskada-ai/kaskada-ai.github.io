@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page {{ page.className }} {{ layout.className }}" aria-label="Content" id="main">
+      {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- include scripts.html -%}
+    {% vite_client_tag %}
+    {% vite_javascript_tag application %}
+  </body>
+
+</html>

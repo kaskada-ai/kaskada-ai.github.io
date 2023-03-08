@@ -1,0 +1,255 @@
+.home {
+  $page: &;
+
+  #{$page}--header {
+    padding: 4rem 0;
+    background-image: url($baseurl + "/assets/images/homepage-v2-hero-bg-mobile.png");
+    background-size: auto 100%;
+    background-repeat: round;
+    margin-bottom: 5rem;
+
+    .info {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 8.5rem 0 8rem;
+      background-image: url($baseurl + "/assets/images/homepage-v2-hero-bg.png");
+      background-repeat: round;
+    }
+  }
+
+  .hero {
+    position: relative;
+    text-align: center;
+    margin-bottom: 6rem;
+
+    h1 {
+      font-weight: 600;
+      font-size: 2em;
+      line-height: 1.12em;
+      color: #26364a;
+      margin: 0 0 1.5rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.6em;
+      color: #26364a;
+      margin: 0 0 3rem;
+    }
+
+    .btn {
+      display: block;
+
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1.07em;
+      }
+
+      .btn {
+        display: inline-block;
+        min-width: 180px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0;
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .features {
+    margin-bottom: 5rem;
+
+    &--heading {
+      h2 {
+        font-size: 1.25rem;
+        line-height: 1.3em;
+        text-align: center;
+        color: #26364a;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-align: center;
+        color: #26364a;
+
+        &:last-of-type {
+          margin-bottom: 3.5rem;
+        }
+      }
+    }
+
+    .card {
+      h4 {
+        font-size: 1rem;
+        line-height: 1.5em;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #f14c4c;
+        margin: 0 0 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5em;
+        color: #26364a;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+
+      .card-body {
+        padding: 1.5rem 0;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 7.5rem;
+
+      &--heading {
+        h2 {
+          font-size: 2rem;
+          line-height: 1.12em;
+        }
+      }
+
+      .card {
+        .card-body {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+
+  .info {
+    margin-bottom: 6rem;
+
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.3em;
+      color: #26364a;
+      text-align: center;
+      margin: 0 0 1.5rem;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 2rem;
+        line-height: 1.12em;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5em;
+      color: #26364a;
+    }
+  }
+
+  .video-cover {
+    margin-top: 44px;
+  }
+
+  .posts {
+    margin-bottom: 7.5rem;
+
+    h2 {
+      font-size: 0.875rem;
+      line-height: 1.43em;
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #26364a;
+      margin: 0 0 3rem;
+    }
+
+    .card {
+      flex: 1;
+
+      .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h4 {
+        font-size: 1.125rem;
+        line-height: 1.44em;
+        color: #26364a;
+        margin: 0 0 1rem;
+      }
+
+      &--event {
+        &-details {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          font-family: "Sora";
+          font-weight: 600;
+          font-size: 0.75rem;
+          line-height: 1.33em;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #778393;
+          margin: 0 0 1.5rem;
+
+          span:last-of-type {
+            text-align: right;
+          }
+        }
+      }
+
+      &--post {
+        h5 {
+          font-size: 0.75rem;
+          line-height: 1.33em;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #778393;
+          margin: 0 0 2rem;
+        }
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        font-family: "Sora";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        color: #26364a;
+        margin-top: auto;
+
+        &::after {
+          content: url("data:image/svg+xml,%3Csvg width='14' height='16' viewBox='0 0 14 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM13.7071 8.70711C14.0976 8.31658 14.0976 7.68342 13.7071 7.29289L7.34315 0.928932C6.95262 0.538408 6.31946 0.538408 5.92893 0.928932C5.53841 1.31946 5.53841 1.95262 5.92893 2.34315L11.5858 8L5.92893 13.6569C5.53841 14.0474 5.53841 14.6805 5.92893 15.0711C6.31946 15.4616 6.95262 15.4616 7.34315 15.0711L13.7071 8.70711ZM1 9H13V7H1V9Z' fill='%23F14C4C'/%3E%3C/svg%3E%0A");
+          display: inline-block;
+          width: 0.875em;
+          height: 1em;
+          margin-left: 0;
+          opacity: 0;
+          transition: all 0.4s ease;
+        }
+
+        &:hover {
+          text-decoration: none;
+
+          &::after {
+            margin-left: 0.5em;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

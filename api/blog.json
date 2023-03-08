@@ -1,0 +1,19 @@
+---
+layout: null
+permalink: /api/blog
+---
+
+{
+  "posts": [
+    {% for post in site.posts %}
+      {
+        "title": "{{ post.title }}",
+        "link": "{{ post.url | absolute_url }}",
+        "image": "{{ post.image | absolute_url }}",
+        "author": "{{ post.author }}",
+        "date": "{{ post.date | date: "%s" }}"
+      }
+      {% if forloop.last != true %},{% endif %}
+    {% endfor %}
+  ]
+}

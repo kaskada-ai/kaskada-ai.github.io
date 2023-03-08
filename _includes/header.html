@@ -1,40 +1,76 @@
-<header id="nav-header" class="border-dark border-left-0 border-right-0">
-  <div id="nav-container" class="container position-relative d-flex justify-content-between align-items-center">
-    {% assign default_paths = site.pages | map: "path" %}
-    {% assign page_paths = site.header_pages | default: default_paths %}
-    <a class="h4 m-0 text-dark" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+<nav class="navbar fixed-top navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="{{ "/" | relative_url }}"> {%- include logos/kaskada.html -%} </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    {% if page_paths %}
-      <nav id="nav-menu-container" class="text-right navbar-light">
-        <input type="checkbox" id="nav-trigger" class="d-none"/>
-        <label for="nav-trigger" aria-label="button" class="m-2 d-inline-block d-md-none navbar-toggler-icon">
-        </label>
-
-        <div id="nav-menu" class="d-none d-md-block">
-          <a class="btn btn-primary" href="https://kaskada-ai.github.io/docs-site/kaskada/main/getting-started/hello-world.html">Get Started</a>
-
-          <a class="text-dark ml-3 ml-md-0 p-2 d-block d-md-inline-block" href="https://kaskada-ai.github.io/docs-site/kaskada/main/index.html">Docs</a>
-          {% for path in page_paths %}
-            {% assign my_page = site.pages | where: "path", path | first %}
-            {% if my_page.title %}
-              <a class="text-dark ml-3 ml-md-0 p-2 d-block d-md-inline-block" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {% endif %}
-          {% endfor %}
-
-          <a href="https://github.com/kaskada-ai/kaskada">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"></path></svg>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item nav-item--button">
+          <a
+            class="btn btn-outline-primary nav-link"
+            href="https://supreme-garbanzo-49gzqye.pages.github.io/kaskada/main/getting-started/hello-world.html"
+          >
+            Get Started
           </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ "/docs-site" | relative_url }}">Docs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ "/blog" | relative_url }}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ "/community" | relative_url }}">Community</a>
+        </li>
 
-          <a href="https://twitter.com/kaskadainc">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"></path></svg>
-          </a>
-
-          <a href="https://www.linkedin.com/company/kaskadainc">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a>
-        </div>
-      </nav>
-    {% endif %}
-
+        <li class="nav-item nav-item--social">
+          <ul class="nav social--nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://github.com/kaskada-ai/kaskada"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Github"
+              >
+                {%- include logos/header-github.html -%}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://twitter.com/kaskadainc"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="twitter"
+              >
+                {%- include logos/header-twitter.html -%}
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/company/kaskadainc"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Linkedin"
+              >
+                {%- include logos/header-linkedin.html -%}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>

@@ -1,0 +1,87 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+className: collection
+pagination:
+  enabled: true
+---
+
+{% assign featured = site.posts | sort: "date" | find: 'featured', true %}
+
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Blog</h1>
+      </div>
+      <div class="col-md-4">
+        <search-form type="blog"></search-form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if featured %}
+<section class="featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          class="img-fluid"
+          src="{{ featured.image | relative_url }}"
+          alt="{{ featured.title }}"
+        />
+      </div>
+      <div class="col-md-6 d-flex">
+        <div class="featured-content">
+          <h2>{{ featured.title }}</h2>
+          <p>
+            {% if featured.author %}
+            <span>by {{ featured.author }} · </span>
+            {% endif %}
+            <span>{{ featured.date | date: "%b %-d, %Y" }}</span>
+          </p>
+          <a href="{{ featured.url | relative_url }}">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="posts">
+  <div class="container">
+    <div class="row">
+      {% for post in paginator.posts %}
+      <div class="col-md-4 d-flex mb-4">
+        <div class="card card--item">
+          <div class="card-header">
+            {% if post.image %}
+            <img
+              class="img-fluid"
+              src="{{ post.image | relative_url }}"
+              alt="{{ post.title }}"
+            />
+            {% endif %}
+          </div>
+          <div class="card-body">
+            <h4>{{ post.title }}</h4>
+            <p>
+              {% if post.author %}
+              <span>by {{ post.author }} · </span>
+              {% endif %}
+              <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+            </p>
+            <a href="{{ post.url | relative_url }}">Read More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">{%- include pagination.html -%}</div>
+    </div>
+  </div>
+</section>

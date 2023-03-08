@@ -1,0 +1,32 @@
+.share {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #778393;
+  padding-top: 24px;
+
+  h5 {
+    font-family: "Sora";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #26364a;
+    margin: 0 1em 0 0;
+  }
+
+  a {
+    color: #26364a;
+    margin-right: 0.5rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+  }
+}

@@ -1,5 +1,0 @@
----
-layout: post
-future: true
-name: Kaskada open sourced!
----

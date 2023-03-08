@@ -1,6 +1,6 @@
 ---
 layout: post
-future: true
+featured: true
 ---
 = Welcome to Kaskada Opensource!
 
