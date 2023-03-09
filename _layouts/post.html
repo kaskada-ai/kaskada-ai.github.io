@@ -1,0 +1,59 @@
+---
+layout: default
+className: single-post
+---
+
+<section class="single-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a class="back" href="{{ "/blog" | relative_url }}">
+          <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 1L2 7.5L8.5 14" stroke="currentColor" stroke-width="2"/>
+          </svg>   
+          <span>Blog</span>
+        </a>
+      </div>
+    </div>
+    {% if page.image %}
+    <div class="row">
+      <div class="col-md-5">
+        <img
+          class="img-fluid"
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.title }}"
+        />
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <article
+        class="post h-entry"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        <header class="post-header">
+          <h1 class="post-title p-name" itemprop="name headline">
+            {{ page.title | escape }}
+          </h1>
+          {% include post/meta.html %}
+        </header>
+  
+        <div class="post-content e-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+  
+        {% include share.html %}
+      </article>
+    </div>
+  
+    <div class="col-md-5">
+      {% include newsletter.html %}
+    </div>
+  </div>
+</div>

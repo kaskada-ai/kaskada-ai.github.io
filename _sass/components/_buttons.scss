@@ -1,0 +1,23 @@
+.btn {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &-icon {
+    &--left {
+      svg {
+        margin-right: 0.5em;
+      }
+    }
+
+    &--right {
+      svg {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
+
+[class*="btn-outline-"]:not(:hover) {
+  background-color: $white;
+  color: #26364a;
+}

@@ -1,0 +1,35 @@
+.pagination {
+  .page-item {
+    margin: 0 0.25rem;
+
+    .page-link {
+      padding: 0.3125em 0.625em;
+      font-family: "Sora";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5em;
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #26364a;
+      border: none;
+      border-radius: 6px;
+      width: 2em;
+      height: 2em;
+    }
+
+    &.active {
+      .page-link {
+        color: $white;
+      }
+    }
+
+    &.previous,
+    &.next {
+      .page-link {
+        padding: 0;
+      }
+    }
+  }
+}

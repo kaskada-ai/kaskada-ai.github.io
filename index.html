@@ -1,0 +1,281 @@
+---
+layout: default
+className: home
+---
+
+<header class="home--header">
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <h1>Open source feature engine for real-time ML</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <p>
+            Build and operate real-time ML models directly from event data at scale.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <a
+            class="btn btn-outline-primary"
+            href="https://supreme-garbanzo-49gzqye.pages.github.io/kaskada/main/getting-started/hello-world.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Get Started</span>
+          </a>
+          <a
+            class="btn btn-outline-primary"
+            href="https://github.com/kaskada-ai/kaskada"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Read the docs</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="info" id="why">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p>
+            Kasakada is a time-aware query abstraction, a high-performance feature computation engine, and a configurable execution model supporting bulk and real-time data processing.
+          </p>
+          <p>
+            ML practitioners can unify historical and real-time data processing to instantly reconstruct the historical results of a query and then deploy the same query as a live materialization without losing historical context.
+          </p>
+          <p>You can reduce thousands of lines of SQL and avoid duplication of work across model development and deployment to deploy real-time ML models in days instead of months.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 features--heading">
+        <h2>Lorem ipsum dolor sit amet</h2>
+
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Native time travel</h4>
+            <div class="content">
+              <p>Revisit the result of any feature at any point in time.</p>
+              <p>Use the same query language to define what to compute and to when to compute it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Instant exploration</h4>
+            <div class="content">
+              <p>Generate ML features directly from raw events.</p>
+              <p>Safely downsample results with input slicing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Temporal joins</h4>
+            <div class="content">
+              <p>Compute point-in-time operations between differently-grouped results.</p>
+              <p>Combine results defined at different times as continuous values.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Fast results</h4>
+            <div class="content">
+              <p>Compute engine implemented in Rust for performance and safety.</p>
+              <p>Computation is built on Apache Arrow for speedy CPU utilization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Unified queries</h4>
+            <div class="content">
+              <p>
+                Execute the same query in batch mode over historical data or in incremental mode over real-time streams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+        <div class="card card-simple">
+          <div class="card-body">
+            <h4>Real-time, but with history</h4>
+            <div class="content">
+              <p>Transparently bootstrap real-time features with the full history of raw events.</p>
+              <p>Continuously materialize features for real-time inference</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info text-center" id="video">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2>Lorem ipsum dolor sit amet</h2>
+
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <a
+          class="video-cover"
+          href="#video-modal"
+          data-toggle="modal"
+          data-target="#video-modal"
+        >
+          <img
+            class="img-fluid"
+            src="{{ '/assets/images/video.png' | relative_url }}"
+            alt="Video Cover"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade video-modal"
+    id="video-modal"
+    tabindex="-1"
+    aria-labelledby="Video modal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-body">
+          <video
+            src="https://videos.ctfassets.net/fkvz3lhe2g1w/P7H0v2vjvVGOeHWo4bwiF/7fbc1f9f305ec220276154ef8eb5e428/Expressive_time_selection_compressed.mp4"
+            controls
+          ></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="posts" id="blog">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2>Latest From Kaskada</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for post in site.posts limit: 3 %}
+        <div class="col-md-4 d-flex mb-4">
+          <div class="card card--post">
+            <div class="card-body">
+              <h4>
+                {{ post.title | escape }}
+              </h4>
+              <h5>
+                {% if post.author %}
+                  <span>by {{ post.author }} · </span>
+                {% endif %}
+                <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+              </h5>
+
+              <a href="{{ post.url | relative_url }}">Read More</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+            <a
+            class="btn btn-outline-primary"
+            href="{{ "/blog" | relative_url }}"
+          >
+            View All
+          </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% if site.events != empty %}
+<section class="posts" id="events">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2>Events</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for event in site.events %}
+      <div class="col-md-4 d-flex mb-4">
+        <div class="card card--event">
+          <div class="card-body">
+            <div class="card--event-details">
+              <span>{{ event.date | date: "%b %-d, %Y" }}</span>
+              {% if event.location %}<span>{{ event.location }}</span>{% endif %}
+            </div>
+            <h4>
+              {{ event.title }}
+            </h4>
+
+            <a href="{{ event.url | relative_url }}">Register Now</a>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      NOT FOUND
+      {% endfor %}
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+            <a
+            class="btn btn-outline-primary"
+            href="{{ "/events" | relative_url }}"
+          >
+            View All
+          </a>
+        </div>
+    </div>
+  </div>
+</section>
+{% endif %}

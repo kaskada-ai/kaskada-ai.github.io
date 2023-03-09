@@ -1,0 +1,7 @@
+<p class="post-meta">
+  <time>{{ page.date | date: "%b %-d, %Y" }}</time>
+  {%- if page.location -%}
+    <span class="separator">|</span>
+    <span>{{ page.location }}</span>
+  {%- endif -%}
+</p>

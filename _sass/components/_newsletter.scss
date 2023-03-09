@@ -1,0 +1,48 @@
+.newsletter {
+  padding: 1.5rem;
+  background: #f7f8fa;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+
+  h4 {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.6em;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.25rem;
+      line-height: 1.6em;
+      text-align: left;
+    }
+  }
+
+  label {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: #000000;
+  }
+
+  .form {
+    .form-control {
+      margin-bottom: 1rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      .form-control {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40px;
+    padding: 1.5rem 2rem;
+  }
+}

@@ -1,0 +1,48 @@
+---
+layout: default
+className: single-event
+---
+
+<section class="single-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a class="back" href="{{ "/events" | relative_url }}">
+          <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 1L2 7.5L8.5 14" stroke="currentColor" stroke-width="2"/>
+          </svg>   
+          <span>Back</span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        {% include event/meta.html %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <article class="post h-entry">
+        <header class="post-header">
+          <h1 class="post-title">
+            {{ page.title | escape }}
+          </h1>
+        </header>
+  
+        <div class="post-content e-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+  
+        {% include share.html %}
+      </article>
+    </div>
+  
+    <div class="col-md-5">
+      {% include newsletter.html %}
+    </div>
+  </div>
+</div>

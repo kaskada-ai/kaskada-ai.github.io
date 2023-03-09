@@ -1,0 +1,18 @@
+.card {
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+
+  &-body {
+    padding: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+      padding: 2rem;
+    }
+  }
+
+  &-simple {
+    box-shadow: none;
+  }
+}

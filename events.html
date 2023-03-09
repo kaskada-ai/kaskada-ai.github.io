@@ -1,0 +1,73 @@
+---
+layout: default
+title: Events
+permalink: /events/
+className: collection
+---
+
+{% assign featured = site.events | sort: "date" | find: 'featured', true %}
+
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Events</h1>
+      </div>
+      <div class="col-md-4">
+        <search-form type="events"></search-form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if featured -%}
+<section class="featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img
+          class="img-fluid"
+          src="{{ featured.image | relative_url }}"
+          alt="{{ featured.title }}"
+        />
+      </div>
+      <div class="col-md-6 d-flex">
+        <div class="featured-content">
+          <p class="featured-content--details">
+            <span>{{ featured.date | date: "%b %-d, %Y" }}</span>
+            {% if featured.location %}
+            <span>{{ featured.location }}</span>
+            {% endif %}
+          </p>
+          <h2>{{ featured.title }}</h2>
+          <a href="{{ featured.url | relative_url }}">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+<section class="posts">
+  <div class="container">
+    <div class="row">
+      {% for event in site.events %}
+      <div class="col-md-4 d-flex mb-4">
+        <div class="card card--item">
+          <div class="card-body">
+            <h4>{{ event.title }}</h4>
+            <p>
+              <span>{{ event.date | date: "%b %-d, %Y" }}</span>
+            </p>
+            <a href="{{ event.url | relative_url }}">Read More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">{%- include pagination.html -%}</div>
+    </div>
+  </div>
+</section>
