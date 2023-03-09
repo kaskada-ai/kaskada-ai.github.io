@@ -8,21 +8,20 @@ className: home
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-9">
-          <h1>Open source feature engine for real-time ML</h1>
+          <h1>Better event processing</h1>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6">
           <p>
-            Build and operate real-time ML models directly from event data at scale.
-          </p>
+            A modern, stream-native event processing engine</p>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6">
           <a
             class="btn btn-outline-primary"
-            href="https://supreme-garbanzo-49gzqye.pages.github.io/kaskada/main/getting-started/hello-world.html"
+            href="https://github.com/kaskada-ai/kaskada"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -30,7 +29,7 @@ className: home
           </a>
           <a
             class="btn btn-outline-primary"
-            href="https://github.com/kaskada-ai/kaskada"
+            href="https://kaskada-ai.github.io/docs-site/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -46,12 +45,11 @@ className: home
       <div class="row justify-content-center">
         <div class="col-md-8">
           <p>
-            Kasakada is a time-aware query abstraction, a high-performance feature computation engine, and a configurable execution model supporting bulk and real-time data processing.
+            Kaskada is a modern compute engine designed for processing events in bulk or real-time. Written in Rust and build on Apache Arrow, Kaskada can compute most workloads without the complexity and overhead of distributed execution. 
           </p>
           <p>
-            ML practitioners can unify historical and real-time data processing to instantly reconstruct the historical results of a query and then deploy the same query as a live materialization without losing historical context.
-          </p>
-          <p>You can reduce thousands of lines of SQL and avoid duplication of work across model development and deployment to deploy real-time ML models in days instead of months.</p>
+            Kaskada’s query language builds on the best features of SQL to provide a more expressive way to compute over events. Queries are declarative, simple, and composable. Unlike SQL they’re also concise and designed from the start for processing events chronologically, making it easier to reason about changes over time.
+          <p>
         </div>
       </div>
     </div>
@@ -62,11 +60,17 @@ className: home
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 features--heading">
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h2>Compute from events as timelines</h2>
 
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        The foundation of Kaskada’s query language is the idea of a “timeline”. 
         </p>
+        <p>
+        Timelines describe a value that changes over time - in the same way that SQL queries transform a set of input tables into a result table, Kaskada queries transform a set of input timelines into a result timeline.
+        </p>
+        <p>
+        Thinking with timelines makes it easier to describe and reason about time and behavior.
+        </>
       </div>
     </div>
 
@@ -76,7 +80,7 @@ className: home
           <div class="card-body">
             <h4>Native time travel</h4>
             <div class="content">
-              <p>Revisit the result of any feature at any point in time.</p>
+              <p>Revisit the result of any query at any point in time.</p>
               <p>Use the same query language to define what to compute and to when to compute it.</p>
             </div>
           </div>
@@ -87,7 +91,7 @@ className: home
           <div class="card-body">
             <h4>Instant exploration</h4>
             <div class="content">
-              <p>Generate ML features directly from raw events.</p>
+              <p>Query directly from raw events.</p>
               <p>Safely downsample results with input slicing.</p>
             </div>
           </div>
@@ -132,60 +136,10 @@ className: home
           <div class="card-body">
             <h4>Real-time, but with history</h4>
             <div class="content">
-              <p>Transparently bootstrap real-time features with the full history of raw events.</p>
-              <p>Continuously materialize features for real-time inference</p>
+              <p>Transparently bootstrap real-time queries with the full history of raw events.</p>
+              <p>Continuously materialize results to external data stores</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="info text-center" id="video">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <h2>Lorem ipsum dolor sit amet</h2>
-
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        </p>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <a
-          class="video-cover"
-          href="#video-modal"
-          data-toggle="modal"
-          data-target="#video-modal"
-        >
-          <img
-            class="img-fluid"
-            src="{{ '/assets/images/video.png' | relative_url }}"
-            alt="Video Cover"
-          />
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div
-    class="modal fade video-modal"
-    id="video-modal"
-    tabindex="-1"
-    aria-labelledby="Video modal"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-body">
-          <video
-            src="https://videos.ctfassets.net/fkvz3lhe2g1w/P7H0v2vjvVGOeHWo4bwiF/7fbc1f9f305ec220276154ef8eb5e428/Expressive_time_selection_compressed.mp4"
-            controls
-          ></video>
         </div>
       </div>
     </div>
