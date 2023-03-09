@@ -3,7 +3,6 @@
 
   #{$page}--header {
     padding: 4rem 0;
-    background-image: url($baseurl + "/assets/images/homepage-v2-hero-bg-mobile.png");
     background-size: auto 100%;
     background-repeat: round;
     margin-bottom: 5rem;
@@ -14,7 +13,6 @@
 
     @include media-breakpoint-up(lg) {
       padding: 8.5rem 0 8rem;
-      background-image: url($baseurl + "/assets/images/homepage-v2-hero-bg.png");
       background-repeat: round;
     }
   }
