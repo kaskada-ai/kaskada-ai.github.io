@@ -36,6 +36,9 @@ sass:
   load_paths:
     - _sass
 
+google_analytics: G-HR9E2E6TG4
+
+
 pagination:
   enabled: true
   per_page: 9
