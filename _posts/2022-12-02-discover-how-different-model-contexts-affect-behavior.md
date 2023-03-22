@@ -1,8 +1,8 @@
 ---
 layout: post
-title: discover-how-different-model-contexts-affect-behavior
+title: Discover How Different Model Contexts Affect Behavior
 image: https://images.ctfassets.net/fkvz3lhe2g1w/78afZjI59AslGOD1d0hvOy/e182eeae8df74417bb19a79fc966a5c9/Screenshot_2022-12-06_at_11.54.01_AM.png?w=2880
-author: Charna Parkey, VP of Product
+author: Charna Parkey
 ---
 Predicting customer behavior is not easy, and attempting to alter it predictably is even harder. In order to develop machine learning models that can accurately anticipate and guide customer behavior, it’s critical to understand how your model’s training contexts affect possible interventions and change the final prediction. Can we retain a subscription customer predicted to churn, prevent fraud before it happens, or get non-paying players to spend money so we don’t need to rely only on the less than 5% who usually do?
 
