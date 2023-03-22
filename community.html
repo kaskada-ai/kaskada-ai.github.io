@@ -55,6 +55,8 @@ className: community
   </div>
 </section>
 
+{% assign featured = site.events | sort: "date" | find: 'featured', true %}
+{% if featured %}
 <section class="featured-event">
   <div class="container">
     <div class="row justify-content-center">
@@ -87,6 +89,7 @@ className: community
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="content">
   <div class="container">
