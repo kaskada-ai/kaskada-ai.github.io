@@ -1,7 +1,11 @@
 function calculateWindowHeight() {
+  const $navbar = document.querySelector("nav.navbar");
   const height = window.innerHeight;
   const style = document.createElement("style");
-  style.innerHTML = ":root { --window-height: " + height + "px; }";
+  style.innerHTML = `:root {
+    --window-height: ${height}px;
+    --navbar-height: ${$navbar.clientHeight}px;
+  }`;
   document.head.appendChild(style);
 }
 

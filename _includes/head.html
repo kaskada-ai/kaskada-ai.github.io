@@ -7,13 +7,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&family=Sora:wght@400;600&family=Source+Code+Pro&display=swap"
+    rel="stylesheet"
+  />
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-
-  {% if site.google_analytics and jekyll.environment == 'production' %}
-  {% include analytics.html %}
-  {% endif %}
-
-  {%- feed_meta -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}"> {% if
+  site.google_analytics and jekyll.environment == 'production' %} {% include
+  analytics.html %} {% endif %} {%- feed_meta -%}
 </head>

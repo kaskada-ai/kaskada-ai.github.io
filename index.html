@@ -3,138 +3,113 @@ layout: default
 className: home
 ---
 
-<header class="home--header">
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-9">
-          <h1>Modern event processing</h1>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <a
-            class="btn btn-outline-primary"
-            href="https://github.com/kaskada-ai/kaskada"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Get Started</span>
-          </a>
-          <a
-            class="btn btn-outline-primary"
-            href="https://kaskada-ai.github.io/docs-site/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Read the docs</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="info" id="why">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <p>
-            Kaskada is a modern compute engine designed for processing events in bulk or real-time. Written in Rust and build on Apache Arrow, Kaskada can compute most workloads without the complexity and overhead of distributed execution. 
-          </p>
-          <p>
-            Kaskada’s query language builds on the best features of SQL to provide a more expressive way to compute over events. Queries are declarative, simple, and composable. Unlike SQL they’re also concise and designed from the start for processing events chronologically, making it easier to reason about changes over time.
-          <p>
-        </div>
-      </div>
-    </div>
-  </section>
-</header>
-
-<section class="features" id="features">
+<section class="hero" id="hero">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8 features--heading">
-        <h2>Compute from events as timelines</h2>
+      <div class="col-lg-8">
+        <h1>{{ site.data.homepage.hero.title }}</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <p>{{ site.data.homepage.hero.content }}</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        {% for link in site.data.homepage.hero.links %}
+          <a
+            class="btn btn-outline-primary"
+            href="{{ link.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>{{ link.title }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p>
-        The foundation of Kaskada’s query language is the idea of a “timeline”. 
-        </p>
-        <p>
-        Timelines describe a value that changes over time - in the same way that SQL queries transform a set of input tables into a result table, Kaskada queries transform a set of input timelines into a result timeline.
-        </p>
-        <p>
-        Thinking with timelines makes it easier to describe and reason about time and behavior.
-        </>
+<section class="info" id="why">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2>{{ site.data.homepage.why.title }}</h2>
+      </div>
+      <div class="col-lg-8">
+        <p>{{ site.data.homepage.why.content | newline_to_br }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="options" id="options">
+  <div class="container">
+    <div class="row options__heading">
+      <div class="col-lg-6">
+        <h2>{{ site.data.homepage.options.title }}</h2>
+      </div>
+      <div class="col-lg-9">
+        <p>{{ site.data.homepage.options.content | newline_to_pr }}</p>
+      </div>
+    </div>
+    {% include homepage/options-tabs.html %}
+    {% include homepage/options-accordion.html %}
+  </div>
+</section>
+
+<section class="features" id="benefits">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 features--heading">
+        <h2>{{ site.data.homepage.benefits.title }}</h2>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
+      {% for benefit in site.data.homepage.benefits.list %}
+      <div class="col-lg-4 d-flex mb-2 mb-lg-4">
         <div class="card card-simple">
           <div class="card-body">
-            <h4>Native time travel</h4>
+            <h4>{{ benefit.title }}</h4>
             <div class="content">
-              <p>Revisit the result of any query at any point in time.</p>
-              <p>Use the same query language to define what to compute and to when to compute it.</p>
+              <p>{{ benefit.content | newline_to_br }}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
-        <div class="card card-simple">
-          <div class="card-body">
-            <h4>Instant exploration</h4>
-            <div class="content">
-              <p>Query directly from raw events.</p>
-              <p>Safely downsample results with input slicing.</p>
-            </div>
-          </div>
-        </div>
+      {% endfor %}
+    </div>
+    {% if site.data.homepage.benefits.cta %}
+    <div class="row justify-content-center">
+      <div class="col-lg-4 text-center">
+        <a
+          class="btn btn-outline-primary"
+          href="{{ site.data.homepage.benefits.cta.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>{{ site.data.homepage.benefits.title }}</span>
+        </a>
       </div>
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
-        <div class="card card-simple">
-          <div class="card-body">
-            <h4>Temporal joins</h4>
-            <div class="content">
-              <p>Compute point-in-time operations between differently-grouped results.</p>
-              <p>Combine results defined at different times as continuous values.</p>
-            </div>
-          </div>
-        </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="info" id="usage">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4">
+        <h2>{{ site.data.homepage.usage.title }}</h2>
       </div>
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
-        <div class="card card-simple">
-          <div class="card-body">
-            <h4>Fast results</h4>
-            <div class="content">
-              <p>Compute engine implemented in Rust for performance and safety.</p>
-              <p>Computation is built on Apache Arrow for speedy CPU utilization.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
-        <div class="card card-simple">
-          <div class="card-body">
-            <h4>Unified queries</h4>
-            <div class="content">
-              <p>
-                Execute the same query in batch mode over historical data or in incremental mode over real-time streams.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex mb-2 mb-lg-4">
-        <div class="card card-simple">
-          <div class="card-body">
-            <h4>Real-time, but with history</h4>
-            <div class="content">
-              <p>Transparently bootstrap real-time queries with the full history of raw events.</p>
-              <p>Continuously materialize results to external data stores</p>
-            </div>
-          </div>
-        </div>
+      <div class="col-lg-6 offset-lg-1 d-flex flex-column">
+        {% for item in site.data.homepage.usage.list %}
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.content | newline_to_br }}</p>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -143,14 +118,14 @@ className: home
 <section class="posts" id="blog">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
+      <div class="col-lg-8 text-center">
         <h2>Latest From Kaskada</h2>
       </div>
     </div>
 
     <div class="row">
       {% for post in site.posts limit: 3 %}
-        <div class="col-md-4 d-flex mb-4">
+        <div class="col-lg-4 d-flex mb-4">
           <div class="card card--post">
             <div class="card-body">
               <h4>
@@ -171,7 +146,7 @@ className: home
     </div>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-md-6 text-center">
+        <div class="col-lg-6 text-center">
             <a
             class="btn btn-outline-primary"
             href="{{ "/blog" | relative_url }}"
@@ -187,14 +162,14 @@ className: home
 <section class="posts" id="events">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
+      <div class="col-lg-8 text-center">
         <h2>Events</h2>
       </div>
     </div>
 
     <div class="row">
       {% for event in site.events %}
-      <div class="col-md-4 d-flex mb-4">
+      <div class="col-lg-4 d-flex mb-4">
         <div class="card card--event">
           <div class="card-body">
             <div class="card--event-details">
@@ -215,7 +190,7 @@ className: home
     </div>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-md-6 text-center">
+        <div class="col-lg-6 text-center">
             <a
             class="btn btn-outline-primary"
             href="{{ "/events" | relative_url }}"
