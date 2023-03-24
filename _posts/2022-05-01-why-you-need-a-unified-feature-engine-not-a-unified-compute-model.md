@@ -3,6 +3,7 @@ layout: post
 image: https://images.ctfassets.net/fkvz3lhe2g1w/3CwVQylSOO980CYoc2fSG8/51a48447a5dc0da7966bcf474f3f4bfc/Screenshot_2022-12-06_at_11.57.45_AM.png?w=2880
 title: Why you need a unified feature engine, not a unified compute model
 ---
+
 Many data systems claim to provide a “unified model for batch and streaming” – Apache Spark, Apache Flink, Apache Beam, etc. This is an exciting promise because it suggests a pipeline may be written once and used for both batch processing of historical data and streaming processing of new data. Unfortunately, there is often a significant gap between this promise and reality.
 
 What these “unified” data systems provide is a toolbox of data manipulation operations which may be applied to a variety of sources and sinks and run as a one-time batch job or as an online streaming job. Depending on the framework, certain sources may not work or may behave in unexpectedly different ways depending on the execution mode. Using the components in this toolbox it is possible to write a batch pipeline or a streaming pipeline. In much the same way, it is possible to use Java to write a web server or an Android App – so Java is a “unified toolkit for Web and Android”.
@@ -10,17 +11,15 @@ What these “unified” data systems provide is a toolbox of data manipulation 
 Let’s look at some of the functionality that is necessary to compute features for training and applying a machine learning model. We’d like to provide the following:
 
 1.  Training: Compute features from the historic data at specific points in time to train the model. This should be possible to do during iterative development of the model as well as when rebuilding the model to incorporate updated training data.
-    
 2.  Serving: Maintain the up-to-date feature values in some fast, highly available storage such as Redis or DynamoDB so they may be served for applying the model in production.
-    
 
 We’ll look at a few of the problems you’re likely to encounter. First, how to deal with the fact that training uses examples drawn from a variety of times while serving uses the latest values. Second, how to update the streaming pipeline when feature definitions change. Third, how to support the rapid iteration while experimenting with new features. Finally, we’ll talk about how a feature engine provides a complete solution to the problems of training and serving features.
 
-If you haven’t already, it may be helpful to read  [Machine Learning for Data Engineers](/2022/04/15/machine-learning-for-data-engineers). It provides an overview of the Machine Learning terms and high-level process we’ll be discussing.
+If you haven’t already, it may be helpful to read [Machine Learning for Data Engineers]({{ "/2022/04/15/machine-learning-for-data-engineers" | absolute_url }}). It provides an overview of the Machine Learning terms and high-level process we’ll be discussing.
 
 **Training Examples and Latest Values**
 
-One of the largest differences between training and serving is the shape of the output. Each training example should include the computed predictor features as well as the target feature. In cases where the model is being trained to predict the future, the predictor features must be computed at the time the prediction would be made and the target feature at the point in the future where the result is known. Using any information from the time after the prediction is made would result in  _temporal leakage,_ and produce models that look good in training but perform poorly in practice, since that future information won’t be available. On the other hand, for applying the model the current values of each of the predictor features should be used.
+One of the largest differences between training and serving is the shape of the output. Each training example should include the computed predictor features as well as the target feature. In cases where the model is being trained to predict the future, the predictor features must be computed at the time the prediction would be made and the target feature at the point in the future where the result is known. Using any information from the time after the prediction is made would result in _temporal leakage,_ and produce models that look good in training but perform poorly in practice, since that future information won’t be available. On the other hand, for applying the model the current values of each of the predictor features should be used.
 
 This creates several problems to solve working with the tools in our data processing toolbox. First, we need to figure out how to compute the values at the appropriate times for the training examples. This is surprisingly difficult since most frameworks treat events as an unordered bag and aggregate over all of them. Second, we need to make this behavior configurable, so that the same logic can be used to compute training examples and current values.
 
