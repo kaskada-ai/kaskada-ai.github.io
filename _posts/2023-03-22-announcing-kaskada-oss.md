@@ -80,4 +80,4 @@ Give it a try – download one of the releases and run some computations on your
 
 Help spread the word – Star and Follow the project on GitHub!
 
-Please file issues, start discussions or join us on SLACK|DISCORD to chat about the project or event-processing in general.
+Please file issues, start discussions or join us on Github to chat about the project or event-processing in general.

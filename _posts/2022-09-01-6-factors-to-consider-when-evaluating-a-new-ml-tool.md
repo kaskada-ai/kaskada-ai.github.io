@@ -64,7 +64,7 @@ Finally, for every query, historical or real-time, a data-token-id is returned f
 
 Even in the best of hands, tools will inevitably break or fail to operate in an expected way. It is in these times that the true strength (or weakness) of the organization backing a product is revealed. You’ll want a product that has robust, well-maintained documentation that explains all of the product’s features. You’ll also want access to solution accelerators where you can see how the tool is used to accomplish common tasks in existing applications.
 
-Finally, you’ll want an organization you can turn to for personal support when debugging fails or when something breaks. Having access to technical members of the product’s development team who can get to the root of the problem is crucial. Kaskada provides  [documentation](https://docs.kaskada.com/)  of all product features, demos and case studies, and enterprise support for issues that arise in development and production. It is also under active development by a team that is responsive to users’ issues and feature requests, both within an enterprise context and beyond.
+Finally, you’ll want an organization you can turn to for personal support when debugging fails or when something breaks. Having access to technical members of the product’s development team who can get to the root of the problem is crucial. Kaskada provides  [documentation](https://kaskada-ai.github.io/docs-site)  of all product features, demos and case studies, and enterprise support for issues that arise in development and production. It is also under active development by a team that is responsive to users’ issues and feature requests, both within an enterprise context and beyond.
 
 #### Final Thoughts
 

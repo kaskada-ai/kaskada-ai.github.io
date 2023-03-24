@@ -14,7 +14,7 @@
         <span v-if="post.author">by {{ post.author }} · </span>
         <span>{{ date }}</span>
       </p>
-      <a href="{{ post.url }}">Read More</a>
+      <a :href="post.link">Read More</a>
     </div>
   </div>
 </template>

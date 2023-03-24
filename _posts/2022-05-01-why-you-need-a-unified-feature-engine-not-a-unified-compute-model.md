@@ -16,7 +16,7 @@ Let’s look at some of the functionality that is necessary to compute features 
 
 We’ll look at a few of the problems you’re likely to encounter. First, how to deal with the fact that training uses examples drawn from a variety of times while serving uses the latest values. Second, how to update the streaming pipeline when feature definitions change. Third, how to support the rapid iteration while experimenting with new features. Finally, we’ll talk about how a feature engine provides a complete solution to the problems of training and serving features.
 
-If you haven’t already, it may be helpful to read  [Machine Learning for Data Engineers](https://kaskada.com/insights/machine-learning-for-data-engineers). It provides an overview of the Machine Learning terms and high-level process we’ll be discussing.
+If you haven’t already, it may be helpful to read  [Machine Learning for Data Engineers](/2022/04/15/machine-learning-for-data-engineers). It provides an overview of the Machine Learning terms and high-level process we’ll be discussing.
 
 **Training Examples and Latest Values**
 

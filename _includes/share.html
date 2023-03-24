@@ -1,15 +1,15 @@
 <footer class="share">
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  <a class="u-url" href="{{ page.url | absolute_url | relative_url }}" hidden></a>
   <h5>Share</h5>
   <a
-    href="https://twitter.com/intent/tweet?url={{ page.url | url_encode }}&tw_p=tweetbutton"
+    href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&tw_p=tweetbutton"
     target="_blank"
     rel="noopener noreferrer"
   >
     {%- include logos/header-twitter.html -%}
   </a>
   <a
-    href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | url_encode }}"
+    href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}"
     target="_blank"
     rel="noopener noreferrer"
   >

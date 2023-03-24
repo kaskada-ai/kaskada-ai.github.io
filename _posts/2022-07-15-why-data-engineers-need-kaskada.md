@@ -77,4 +77,4 @@ We designed Kaskada specifically to support iterative time-based feature enginee
 
 In the past, behavioral ML has been hard to develop and maintain, but it doesn’t have to be. By using the right tool for the job you can build and deploy models in a fraction of the time. After migrating their behavioral ML feature engineering from traditional compute engines to Kaskada, our users typically see at least 25x reductions in time-to-production and are able to explore thousands of times more feature variations - resulting in better-performing models.
 
-Trying out Kaskada is easy - you can signup today for free and start discovering the stories hidden in your data. Take a look at our  [demo](https://www.youtube.com/watch?v=-ka3EvjOLN4)  to see how.
+Trying out Kaskada is easy - you can signup today for free and start discovering the stories hidden in your data.
