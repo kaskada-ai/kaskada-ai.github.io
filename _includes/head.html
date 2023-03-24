@@ -13,7 +13,15 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}"> {% if
-  site.google_analytics and jekyll.environment == 'production' %} {% include
-  analytics.html %} {% endif %} {%- feed_meta -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="{{ " /assets/js/fenl.min.js" | relative_url }}"></script>
+  <script>hljs.highlightAll();</script>
+
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
+
+  {%- feed_meta -%}
 </head>

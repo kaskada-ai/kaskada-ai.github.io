@@ -58,11 +58,10 @@ select
      entity_id
      , event_hour_start
      , count(*) as event_count_hourly
-
 from
      events_table
 group by
-           1, 2, 3
+        1, 2, 3
 ```
 
 Non-pandas python would probably use a more manual strategy, like looping through the calculated time buckets.
@@ -71,13 +70,9 @@ FENL’s syntax for the same would look something like this:
 
 ```
 {
-
    entity_id,
-
    timestamp,
-
    event_count_hourly: EventsTable | count(window=since(hourly())),
-
 }
 ```
 
@@ -85,15 +80,10 @@ While I could argue that FENL’s syntax is somewhat more concise here, it’s m
 
 ```
 {
-
    entity_id,
-
    timestamp,
-
    event_count_hourly: EventsTable | count(window=since(hourly())),
-
    event_count_daily: EventsTable | count(window=since(daily())),
-
 }
 ```
 
@@ -109,20 +99,13 @@ In SQL, the most common way to calculate a 30-day rolling average is to use a wi
 
 ```
 select
-
-    entity_id
-
-    , date
-
-    , avg(event_count) over (
-
-        order by date rows between 29 preceding and current row
-
-    ) as avg_30day_event_count
-
+     entity_id
+     , date
+     , avg(event_count) over (
+         order by date rows between 29 preceding and current row
+     ) as avg_30day_event_count
 from 
-
-    events_table
+     events_table
 ```
 
 Sometimes, when sourcing clean, complete, processed data, this type of SQL window function will work as-is. However, window functions require all rows to represent equal units of time, and there can be no missing rows. So, if we can’t guarantee that both of these are true, in order to guarantee that the above query will work, we need to aggregate to rows of daily values and fill in missing rows with zeros.
@@ -131,25 +114,15 @@ We can aggregate to daily rows as in the previous section above. Filling in miss
 
 ```
 /* a recursive CTE for generating a single `event_day_end` column that increments by 1 day */
-
        with recursive day_list(event_day_end) as ( 
-
            /* start at the first day in the data*/
-
            values( (select min(event_day_end) from events_table) )
-
            union all          
-
            select
-
                datetime(strftime('%Y-%m-%d %H:00:00', event_day_end), '+1 day')
-
            from
-
                day_list
-
            limit 1000  /* just needs to be larger than the expected number of rows/days */
-
        )
 ```
 
@@ -172,17 +145,11 @@ In FENL, we don’t need a date spine or a JOIN, and we can apply the aggregatio
 
 ```
 {
-
 entity_id,
-
 timestamp,
-
 avg_30day_event_count: EventsTable 
-
         | count(window=since(daily()))
-
         | mean(window=sliding(30, daily()))
-
 }
 ```
 
