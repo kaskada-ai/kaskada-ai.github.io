@@ -43,7 +43,33 @@ The reporting platform needs hourly aggregations of activity, such as counts and
 
 Kaskada’s feature engineering language, FENL, is built specifically for working with time-centric features on event-based data. Aggregations of events over time is also a core competency of FENL—aggregations can be considered a type of feature. The hourly reporting platform at our e-commerce company mainly requires simple aggregations, such as those shown below in SQL and the equivalent in FENL.
 
-![](https://images.ctfassets.net/fkvz3lhe2g1w/3siJnyfBDgkRpsig5OqbL1/8d0a6d731311ee8277d2ae37e4463a8f/Screen_Shot_2022-08-11_at_3.11.16_PM.png)
+
+SQL
+```
+SELECT
+  DATE_TRUNC ('hour', event_at) as reporting_at,
+  entity_id as user_id,
+  count (*) as event_count,
+  SUM (revenue) as revenue_total
+FROM
+  ecommerce_event_history
+GROUP BY 1, 2
+```
+
+FENL
+```
+let event_count = ecommerce_event_history | count(window=since(hourly()))
+let reporting_date = event_count | time_of()
+let user_id: ecommerce_event_history.entity_id | last()
+
+{
+  reporting_date,
+  user_id,
+  event_count,
+  revenue_total: ecommerce_event_history.revenue | sum()
+}
+| when (hourly())
+```
 
 The SQL aggregations are fairly straightforward, and the FENL equivalent is similar but slightly different due to FENL’s special handling of time variables and our use of the  _let_ keyword for assigning variable names within the query, for clarity and convenience. Both versions use a  _count_() and a  _sum_() function, and both group by user_id and date, though FENL’s grouping is implicit because user_id is the entity ID and because the hourly() function is used to specify the times at which we would like to know results. For more information on entities and the treatment of time in FENL, see  [the FENL language guide]({{ "/2022/08/01/How-data-science-and-machine-learning-toolsets-benefit-from-kaskada-time-centric-design" | absolute_url }}).
 
@@ -59,11 +85,69 @@ See the example features written below in both SQL and FENL, and the notebook li
 
 ## SQL
 
-![](https://images.ctfassets.net/fkvz3lhe2g1w/1gcRTMPxWS7MJwIjQjYpAi/6eb489be82aa0c5e11981a2742d846a4/Screen_Shot_2022-08-11_at_2.39.52_PM.png)
+```
+/* features based on hourly aggregations */
+  with hourly agg as (
+    select
+      entity_id
+      , event_hour_start
+      , event_hour_end
+      , event_hour_end_epoch
+
+      /* features from hourly aggregation */
+      , count (*) as event_count_hourly
+      , sum (revenue) as revenue_hourly
+    from
+      events_augmented /* the equivalent of CodeComparisonEvents in this notebook */
+    group by
+      1, 2, 3
+  )
+
+
+  /* features based on full event history up to that time */
+    select
+      hourly_agg.entity_id
+      , hourly_agg.event_hour_end
+      , hourly_agg.event_hour_end_epoch
+      , hourly_agg.event_count_hourly
+      , hourly_agg.revenue_hourly
+      
+      /* features from all of history */
+      , count (*) as event_count_total
+      , sum (events_augmented. revenue) as revenue_total
+      , min (events_augmented.event_at_epoch) as first_event_at_epoch
+      , max(events_augmented.event_at_epoch) as last_event_at_epoch
+    from
+      hourly_agg
+    left join events_augmented
+      on hourly_agg.entity_id = events_augmented.entity_id
+      and hourly_agg.event_hour_end >= events_augmented.event_at
+    group by
+      1, 2, 3, 4, 5
+```
 
 ## FENL
+```
+# set basic variables to be used in later expressions
+let epoch_start = 0 as timestamp_ns
 
-![](https://images.ctfassets.net/fkvz3lhe2g1w/2oeUU0Mh0iTs7vU0pQ9zso/f175039000f05656317586b6ec7d8b82/Screen_Shot_2022-08-11_at_2.42.04_PM.png)
+# create continuous-time versions of inputs
+let timestamp = CodeComparisonEvents | count() | time_of()
+let entity_id = CodeComparisonEvents.entity_id | last ()
+
+in {
+  entity_id,
+  timestamp,
+  event_count_hourly: CodeComparisonEvents | count (window=since(hourly())),
+  revenue_hourly: CodeComparisonEvents.revenue | sum (window=since(hourly())),
+  event_count_total: CodeComparisonEvents | count(),
+  revenue_total: CodeComparisonEvents.revenue | sum(),
+  first_event_at_epoch: CodeComparisonEvents.event_at | first() | seconds_between(epoch_start, $input) as 164,
+  last_event_at_epoch: CodeComparisonEvents.event_at | last () | seconds_between(epoch_start, $input) as 164,
+}
+
+| when (hourly()) 
+```
 
 FENL, in this example, allows us to write a set of feature definitions in one place, in one query block (plus some variable assignments for conciseness and readability). It is not a multi-stage, multi-CTE query with multiple JOIN and GROUP BY clauses, like the equivalent in SQL, which adds complexity and lines of code, and increases the chances of introducing bugs into the code.
 
