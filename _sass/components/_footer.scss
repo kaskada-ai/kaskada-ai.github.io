@@ -12,6 +12,11 @@
     }
   }
 
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
   ul {
     display: flex;
     flex-direction: row;

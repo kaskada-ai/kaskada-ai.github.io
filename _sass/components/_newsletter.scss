@@ -5,6 +5,10 @@
   margin-bottom: 4rem;
   z-index: 1050;
 
+  .modal-header {
+    border-bottom: 0;
+  }
+
   h4 {
     font-family: "Noto Sans";
     font-style: normal;
@@ -45,5 +49,20 @@
     position: sticky;
     top: calc(var(--navbar-height) + 24px);
     padding: 1.5rem 2rem;
+
+    .modal-body,
+    .modal-header {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .modal-header {
+      margin-top: 40px;
+    }
+
+    .modal-body {
+      margin-bottom: 40px;
+    }
   }
 }
