@@ -35,7 +35,7 @@ pagination:
       </div>
       <div class="col-md-6 d-flex">
         <div class="featured-content">
-          <h2>{{ featured.title }}</h2>
+          <a href="{{ featured.url | relative_url }}"><h2>{{ featured.title }}</h2></a>
           <p>
             {% if featured.author %}
             <span>by {{ featured.author }} · </span>
@@ -66,7 +66,7 @@ pagination:
             {% endif %}
           </div>
           <div class="card-body">
-            <h4>{{ post.title }}</h4>
+            <a href="{{ post.url | relative_url }}"><h4>{{ post.title }}</h4></a>
             <p>
               {% if post.author %}
               <span>by {{ post.author }} · </span>

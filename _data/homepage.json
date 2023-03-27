@@ -70,49 +70,49 @@
       {
         "title": "Stateful aggregations",
         "content": "Aggregate events to produce a continuous timeline whose value can be observed at arbitrary points in time.",
-        "code": "# What is the highest review to date?  \nmax(review.stars)",
+        "code": "# What is the highest review to date?\nmax(review.stars)",
         "image": "/assets/images/homepage/stateful-aggregations.png"
       },
       {
         "title": "Automatic joins",
         "content": "Every expression is associated with an “entity”, allowing tables and expressions to be automatically joined. Entities eliminate redundant boilerplate code.",
-        "code": "# How many purchases have been made per page view (combines tables)?\ncount(purchase) / count(pageview)",
+        "code": "# How many purchases have been made per page view\n# (combines tables)?\ncount(purchase) / count(pageview)",
         "image": "/assets/images/homepage/automatic-joins.png"
       },
       {
         "title": "Event-based windowing",
         "content": "Collect events as you move through time, and aggregate them with respect to other events. Ordered aggregation makes it easy to describe temporal interactions.",
-        "code": "# How many pageviews have occurred since the last purchase?\ncount(pageview, window=since(purchase))\n\n# Auto-join purchases  # How much has been spent since the last review?\ncount(purchase, window=since(review))",
+        "code": "# How many pageviews have occurred since\n# the last purchase?\ncount(pageview, window=since(purchase))\n\n# Auto-join purchases\n# How much has been spent since the last review?\ncount(purchase, window=since(review))",
         "image": "/assets/images/homepage/event-based-windowing.png"
       },
       {
         "title": "Pipelined operations",
         "content": "Pipe syntax allows multiple operations to be chained together. Write your operations in the same order you think about them. It's timelines all the way down, making it easy to aggregate the results of aggregations.",
-        "code": "# What's the largest spend on food over 2 purchases? purchase.amount \n| when(purchase.category == \"food\") \n| sum(window=sliding(2, $input)) # Inner aggregation\n| max() # Outer aggregation",
+        "code": "# What's the largest spend on food over 2 purchases?\npurchase.amount \n| when(purchase.category == \"food\") \n| sum(window=sliding(2, $input)) # Inner aggregation\n| max()                          # Outer aggregation",
         "image": "/assets/images/homepage/pipelined-operations.png"
       },
       {
         "title": "Row generators",
         "content": "Pivot from events to time-series. Unlike grouped aggregates, generators produce rows even when there's no input, allowing you to react when something doesn't happen.",
-        "code": "# How many signups occurred every hour (even if there were none)?\ncount(signups, window=since(daily())) \n| when(daily()) \n| mean()",
+        "code": "# How many signups occurred every hour\n# (even if there were none)?\ncount(signups, window=since(daily()))\n| when(daily())\n| mean()",
         "image": "/assets/images/homepage/row-generators.png"
       },
       {
         "title": "Continuous expressions",
         "content": "Observe the value of aggregations at arbitrary points in time. Timelines are either “discrete” (instantaneous values or events) or “continuous” (values produced by a stateful aggregations). Continuous timelines let you combine aggregates computed from different event sources.",
-        "code": "# What is the average review for each purchased product? let product_average = review \n| with_key(review.product_id) \n| mean() in product_average \n| lookup(purchase.product_id))",
+        "code": "# Compute the average review for each product?\nlet product_average = review\n| with_key(review.product_id)\n| mean()\n# Each purchase joined with average\nin product_average | lookup(purchase.product_id))",
         "image": "/assets/images/homepage/continuous-expressions.png"
       },
       {
         "title": "Native time travel",
         "content": "Shift values forward in time. …allows you to…",
-        "code": "# How many purchases have occurred in the last day?\nlet purchase_c = count(purchase)\nlet day_over_day_signups = purchase_c - ( # Start value “now”\npurchase_c | shift_by(days(1)) # Subtract the value a day ago)",
+        "code": "# How many purchases have occurred in the last day?\nlet purchases_now = count(purchase)\nlet purchases_yesterday =\n   purchases_now | shift_by(days(1))\nin purchases_now - purchases_yesterday",
         "image": "/assets/images/homepage/native-time-travel.png"
       },
       {
         "title": "Simple, composable syntax",
         "content": "It functions all the way down. No global state, no dependencies to manage, and no spooky action at a distance. Quickly understand what a query is doing, and painlessly refactor to make it DRY.",
-        "code": "# How many big purchases happen each hour and where? \nlet cadence = hourly()  # Anything can be named and re-used \nlet hourly_big_purchases = purchase \n| when(purchase.amount > 10)     # Filter anywhere \n| count(window=since(cadence))   # Aggregate anything  \n| when(cadence)                  # No choosing between “when” & “having” \n\nin {hourly_big_purchases}        # Records are just another type \n| extend({    # …modify them sequentially\n       last_visit_region: last(pageview.region)})"
+        "code": "# How many big purchases happen each hour and where?\nlet cadence = hourly()\n# Anything can be named and re-used\nlet hourly_big_purchases = purchase\n| when(purchase.amount > 10)\n# Filter anywhere \n| count(window=since(cadence))\n# Aggregate anything\n| when(cadence)\n# No choosing between “when” & “having”\n\nin {hourly_big_purchases}\n# Records are just another type\n| extend({\n  # …modify them sequentially\n  last_visit_region: last(pageview.region)\n})"
       }
     ]
   }

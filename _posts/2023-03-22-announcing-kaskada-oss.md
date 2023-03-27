@@ -2,8 +2,8 @@
 layout: post
 title: Announcing Kaskada OSS
 image: assets/images/blog/announcing-kaskada-oss.png
+featured: true
 ---
-
 
 Today, we’re announcing the open-source release of Kaskada – a modern, open-source event processing engine.
 
@@ -24,7 +24,7 @@ When [DataStax acquired Kaskada](https://www.datastax.com/press-release/datastax
 1. **Rich, Temporal Operations**: The ability to easily express computations over time beyond windowed aggregations. For instance, when computing training data it was often necessary to compute values at a point in time in the past and combine those with a label value computed at a later point in time. This led to a powerful set of operations for working with time.
 2. **Events all the way down**: The ability to run a query both to get all results over time and just the final results. This means that Kaskada operates directly on the events – turning a sequence of events into a sequence of changes, which may be observed directly or materialized to a table. By treating everything as events, the temporal operations are always available and you never need to think about the difference between streams and tables, nor do you need to use different APIs for each.
 3. **Modern and easy to use**: Kaskada is built in Rust and uses Apache Arrow for high-performance, columnar computations. It consists of a single binary which makes for easy local and cloud deployments.
-    
+
 
 This led to the decision to open source Kaskada as a modern, open-source event-processing language and native engine. Machine learning is still a great use case of Kaskada, but we didn’t want the feature engine label to constrain community creativity and innovation. It’s all available today in the [GitHub repository](https://github.com/kaskada-ai/kaskada) under the Apache 2.0 License.
 
@@ -40,24 +40,26 @@ Kaskada provides a declarative language for event-processing. Because of the foc
 
 3. **You want to process events today without setting up other tools.**
 The columnar event-processing engine within Kaskada scales to X million events/second running on a single machine. This lets you get started and iterate quickly without becoming an expert in cluster management or big-data tools.
-    
+
 
 # What’s coming next?
 
-Our first goal was getting the project released. Now that it is out there, we are looking to improve the project in multiple dimensions.
+Our first goal was getting the project released. Now that it is, we are excited to see where the project goes!
 
-1. **Further align query capabilities with more general, event-processing use cases.**
-    - Ability to create composite events from patterns of existing events and subsequently process those composite events (“CEP”).
-    - Improvements to the declarative language to reduce surprises, make it more familiar to new users, and make it even easier to express temporal computations over events.
+Some improvements on our mind are shown below. We look forward to hearing your thoughts on what would help you process events.
 
-2.  **Continue to improve local performance and usability.**
-    - Make it possible to use the engine more easily in a variety of ways – via a command line REPL, via an API, etc.
-    - Improve performance and latency of real-time and partitioned execution within the native engine.
-
-3.  **Increase extensibility and participate in the larger open-source community.**
+1.  **Increase extensibility and participate in the larger open-source community.**
     - Introduce extension points for I/O connectors and contribute connectors for a larger set of supported formats.
     - Expose a logical execution plan after the language constructs have been compiled away, so that other executors may be developed using the same parsing and type-checking rules.
     - Introduce extension points for custom schema catalogs, allowing Kaskada queries to be compiled against existing data catalogs.
+
+2. **Align query capabilities with more general, event-processing use cases.**
+    - Ability to create composite events from patterns of existing events and subsequently process those composite events (“CEP”).
+    - Improvements to the declarative language to reduce surprises, make it more familiar to new users, and make it even easier to express temporal computations over events.
+
+3.  **Continue to improve local performance and usability.**
+    - Make it possible to use the engine more easily in a variety of ways – via a command line REPL, via an API, etc.
+    - Improve performance and latency of real-time and partitioned execution within the native engine.
 
 # How can I contribute?
 
@@ -67,4 +69,4 @@ We’d love to hear what you think - please comment or ask on our [Kaskada GitHu
 
 Help spread the word – Star and Follow the project on GitHub!
 
-Please file issues, start discussions or join us on Github to chat about the project or event-processing in general.
+Please file issues, start discussions or join us on GitHub to chat about the project or event-processing in general.

@@ -292,8 +292,8 @@
     .card {
       border: none;
       box-shadow: none;
-      
-      
+
+
       &:not(:last-child) {
         margin-bottom: 2rem;
       }
@@ -352,7 +352,7 @@
           font: inherit;
           color: inherit;
           margin: 0;
-          white-space: pre-line;
+          white-space: pre;
         }
       }
 

@@ -3,6 +3,9 @@ layout: post
 image: https://images.ctfassets.net/fkvz3lhe2g1w/1k2NqGAjVRdNRbJY91SFWo/8af8a2e076a223eb7f72d2d38e58d4bc/Screenshot_2022-12-05_at_3.22.12_PM.png?w=2880
 title: How AI and ML are helping the gaming industry solve its biggest challenges
 ---
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 AI and ML are enabling incredible advancements across many sectors, and the gaming industry is no exception. Games are rich, virtual environments in which it is possible to gather huge amounts of event-based data from player interactions and behavior. For many companies, this information is forgotten or not utilized effectively, leading games to struggle to attract and retain players. However, for those gaming companies which can effectively apply event-based ML to their data, they can now, more than ever before, extract structure and meaning from player behavior and reap the benefits. These include drastically improved player engagement and retention, heightened player satisfaction, and ultimately much greater player monetization.
 
 Incorporating AI and ML into gameplay and player retention efforts may be the key to securing an outsized slice of the sizable gaming industry revenue pie. Gaming is more popular than ever before, and in recent years its revenues have eclipsed those of the more entrenched entertainment industries. Total gaming revenues (i.e. mobile, PC, and console gaming, combined) have topped $180 billion as of 2021, beating out those from television, digital music, and even box office films. Much of this growth has been driven by better player acquisition, retention, and personalization efforts driven by AI and ML.
