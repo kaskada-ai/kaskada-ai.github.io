@@ -44,7 +44,7 @@ The columnar event-processing engine within Kaskada scales to X million events/s
 
 # What’s coming next?
 
-Our first goal was getting the project released. Now that it is out there, we are excited to see where the project goes!
+Our first goal was getting the project released. Now that it is, we are excited to see where the project goes!
 
 Some improvements on our mind are shown below. We look forward to hearing your thoughts on what would help you process events.
 
