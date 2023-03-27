@@ -6,7 +6,7 @@
       <p>
         <span>{{ date }}</span>
       </p>
-      <a href="{{ event.url }}">Read More</a>
+      <a :href="event.link">Read More</a>
     </div>
   </div>
 </template>

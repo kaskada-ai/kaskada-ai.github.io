@@ -1,30 +1,13 @@
 .home {
   $page: &;
 
-  #{$page}--header {
-    padding: 4rem 0;
-    background-size: auto 100%;
-    background-repeat: round;
-    margin-bottom: 5rem;
-
-    .info {
-      margin-bottom: 0;
-    }
-
-    @include media-breakpoint-up(lg) {
-      padding: 8.5rem 0 8rem;
-      background-repeat: round;
-    }
-  }
-
   .hero {
-    position: relative;
     text-align: center;
-    margin-bottom: 6rem;
+    padding: 4rem 0;
 
     h1 {
-      font-weight: 600;
       font-size: 2em;
+      font-weight: 600;
       line-height: 1.12em;
       color: #26364a;
       margin: 0 0 1.5rem;
@@ -47,6 +30,8 @@
     }
 
     @include media-breakpoint-up(lg) {
+      padding: 6rem 0;
+
       h1 {
         font-size: 3.5rem;
         line-height: 1.07em;
@@ -68,6 +53,8 @@
     margin-bottom: 5rem;
 
     &--heading {
+      margin-bottom: 3.5rem;
+
       h2 {
         font-size: 1.25rem;
         line-height: 1.3em;
@@ -82,7 +69,7 @@
         color: #26364a;
 
         &:last-of-type {
-          margin-bottom: 3.5rem;
+          margin-bottom: 0;
         }
       }
     }
@@ -107,9 +94,6 @@
         }
       }
 
-      .card-body {
-        padding: 1.5rem 0;
-      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -121,23 +105,18 @@
           line-height: 1.12em;
         }
       }
-
-      .card {
-        .card-body {
-          padding: 2rem;
-        }
-      }
     }
   }
 
   .info {
+    padding: 5rem 0;
     margin-bottom: 6rem;
+    background: #f7f8fa;
 
     h2 {
       font-size: 1.25rem;
       line-height: 1.3em;
       color: #26364a;
-      text-align: center;
       margin: 0 0 1.5rem;
 
       @include media-breakpoint-up(lg) {
@@ -146,10 +125,27 @@
       }
     }
 
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f14c4c;
+    }
+
     p {
       font-size: 1rem;
       line-height: 1.5em;
       color: #26364a;
+
+      + h4 {
+        margin-top: 2rem;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -247,6 +243,124 @@
             opacity: 1;
           }
         }
+      }
+    }
+  }
+
+  .options {
+    margin-bottom: 6rem;
+
+    &__heading {
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      color: #26364a;
+
+      h2 {
+        font-size: 2rem;
+        line-height: 1.12em;
+        text-align: center;
+      }
+
+      p {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .nav-pills {
+      .nav-link {
+        font-family: $headings-font-family;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.2em;
+        letter-spacing: 0.05em;
+        color: #26364a;
+        border-radius: 0;
+        padding: 0 0.75rem;
+        margin: 0 0 2rem;
+
+        &.active {
+          background: none;
+          color: #f14c4c;
+          box-shadow: -2px 0 0 0 #f14c4c;
+        }
+      }
+    }
+
+    .card {
+      border: none;
+      box-shadow: none;
+      
+      
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      &-header {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background: 0;
+
+        .btn {
+          padding: 0 0.75rem;
+          font-family: $headings-font-family;
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.2em;
+          letter-spacing: 0.05em;
+          color: #26364a;
+          width: 100%;
+          text-align: left;
+          border-radius: 0;
+          outline: none;
+          box-shadow: none;
+          text-decoration: none;
+
+          &[aria-expanded="true"] {
+            color: #f14c4c;
+            box-shadow: -2px 0 0 0 #f14c4c;
+          }
+        }
+      }
+    }
+
+    .card-body,
+    .tab-pane {
+      p {
+        &:last-of-type {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      code {
+        display: block;
+        background: #f7f8fa;
+        border: 1px solid #778393;
+        border-radius: 10px;
+        padding: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.4em;
+        letter-spacing: 0.05em;
+        color: #26364a;
+        margin-bottom: 2rem;
+
+        pre {
+          font: inherit;
+          color: inherit;
+          margin: 0;
+          white-space: pre-line;
+        }
+      }
+
+      figure {
+        background: #ffffff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
       }
     }
   }

@@ -14,5 +14,13 @@
 
   &-simple {
     box-shadow: none;
+
+    .card-body {
+      padding: 1.5rem;
+
+      @include media-breakpoint-up(lg) {
+        padding: 1.5rem;
+      }
+    }
   }
 }

@@ -24,7 +24,7 @@ className: community
         <div class="buttons">
           <a
             class="btn btn-icon--left btn-outline-primary"
-            href="#"
+            href="https://github.com/kaskada-ai/kaskada/discussions"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -33,7 +33,7 @@ className: community
           </a>
           <a
             class="btn btn-icon--left btn-outline-primary"
-            href="#"
+            href="https://twitter.com/kaskadainc"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -42,12 +42,12 @@ className: community
           </a>
           <a
             class="btn btn-icon--left btn-outline-primary"
-            href="#"
+            href="https://www.linkedin.com/company/kaskadainc"
             target="_blank"
             rel="noopener noreferrer"
           >
             {%- include logos/header-linkedin.html -%}
-            <span>Linkedin group</span>
+            <span>Follow us on LinkedIn</span>
           </a>
         </div>
       </div>
@@ -55,6 +55,8 @@ className: community
   </div>
 </section>
 
+{% assign featured = site.events | sort: "date" | find: 'featured', true %}
+{% if featured %}
 <section class="featured-event">
   <div class="container">
     <div class="row justify-content-center">
@@ -87,6 +89,7 @@ className: community
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="content">
   <div class="container">

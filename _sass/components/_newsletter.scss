@@ -3,6 +3,7 @@
   background: #f7f8fa;
   border-radius: 10px;
   margin-bottom: 4rem;
+  z-index: 1050;
 
   h4 {
     font-family: "Noto Sans";
@@ -42,7 +43,7 @@
   @include media-breakpoint-up(lg) {
     position: -webkit-sticky;
     position: sticky;
-    top: 40px;
+    top: calc(var(--navbar-height) + 24px);
     padding: 1.5rem 2rem;
   }
 }

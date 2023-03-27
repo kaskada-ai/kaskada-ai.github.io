@@ -1,0 +1,50 @@
+<div class="row d-none d-lg-flex justify-content-center">
+  <div class="col-md-3">
+    <div
+      class="nav flex-column nav-pills"
+      id="v-pills-tab"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      {% for tab in site.data.homepage.options.list %}
+      <a
+        class="nav-link {% if forloop.index0 == 0 %}active{% endif %}"
+        id="v-pills-{{ tab.title | slugify }}-tab"
+        data-toggle="pill"
+        href="#v-pills-{{ tab.title | slugify }}"
+        role="tab"
+        aria-controls="v-pills-{{ tab.title | slugify }}"
+        aria-selected="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}"
+      >
+        <span>{{ tab.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="col-md-6 offset-md-1">
+    <div class="tab-content" id="v-pills-tabContent">
+      {% for tab in site.data.homepage.options.list %}
+      <div
+        class="tab-pane fade {% if forloop.index0 == 0 %}show active{% endif %}"
+        id="v-pills-{{ tab.title | slugify }}"
+        role="tabpanel"
+        aria-labelledby="v-pills-{{ tab.title | slugify }}-tab"
+      >
+        <p>{{ tab.content | newline_to_br }}</p>
+        <code>
+          <pre>{{ tab.code }}</pre>
+        </code>
+        {% if tab.image %}
+        <figure>
+          <img
+            class="img-fluid"
+            src="{{ tab.image | absolute_url }}"
+            alt="{{ tab.title }}"
+          />
+        </figure>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "title": "Modern, open-source event processing",
+    "content": "Kaskada is a unified event processing engine that provides all the power of stateful stream processing in a high-level, declarative query language designed specifically for reasoning about events in bulk and in real time.",
+    "links": [
+      {
+        "title": "Get Started",
+        "url": "https://github.com/kaskada-ai/kaskada"
+      },
+      {
+        "title": "Read the docs",
+        "url": "https://kaskada-ai.github.io/docs-site/"
+      }
+    ]
+  },
+  "why": {
+    "title": "Why Kaskada?",
+    "content": "Kaskada's query language builds on the best features of SQL to provide a more expressive way to compute over events. Queries are simple and declarative. Unlike SQL, they are also concise, composable, and designed for processing events. By focusing on the event-processing use case, Kaskada's query language makes it easier to reason about when things happen, state at specific points in time, and how results change over time.\n\nKaskada is implemented as a modern compute engine designed for processing events in bulk or real-time. Written in Rust and built on Apache Arrow, Kaskada can compute most workloads without the complexity and overhead of distributed execution."
+  },
+  "benefits": {
+    "title": "Benefits",
+    "cta": {
+      "title": "Get Started",
+      "url": "https://github.com/kaskada-ai/kaskada"
+    },
+    "list": [
+      {
+        "title": "Modern",
+        "content": "Built on the latest in efficient, GC-free, columnar computation and packaged up to install and run locally on your existing hardware easily. High-efficiency compute means most workloads fit on a single instance, but Kaskada is cloud-native so you can scale when needed."
+      },
+      {
+        "title": "Stream-native",
+        "content": "Declaratively express queries over partitioned, ordered streams without lossy mappings from streams to relational models. Queries freely combine rich analytic transformations and aggregations with order-dependent temporal and sequential operations."
+      },
+      {
+        "title": "Unified batch and streaming",
+        "content": "Columnar compute allows you to execute analytic queries over large historical event datasets in seconds. End-to-end incremental execution allows you to maintain real-time query results computed over event streams efficiently. Kaskada's stream-native query language means any query can be used, unchanged, in either context."
+      }
+    ]
+  },
+  "usage": {
+    "title": "What can you use Kaskada for?",
+    "list": [
+      {
+        "title": "Machine Learning",
+        "content": "Compute event-based features at arbitrary, data-dependent, points in time in historical feature computation. Prevent data leakages, or accidental computation of future events that contaminate ML models."
+      },
+      {
+        "title": "Analytics",
+        "content": "Compute events in batch or real time for marketing, sales, or business analytics applications."
+      },
+      {
+        "title": "Dashboards & Monitoring",
+        "content": "Analyze logs and events across multiple real time and batch sources for monitoring, troubleshooting, and threat detection. Visualize aggregations over the full history of your events."
+      },
+      {
+        "title": "Supply Chain Management",
+        "content": "Manage supply chain events and processes across locations providing a better end user experience across channels. Dynamically adapt to changing resource availability in real-time."
+      },
+      {
+        "title": "Reactive applications",
+        "content": "Provide a differentiated user experience with applications that respond dynamically to user actions and behavior. Easily write sophisticated trigger conditions to implement real-time business logic."
+      }
+    ]
+  },
+  "options": {
+    "title": "What can you do with Kaskada?",
+    "content": "Kaskada's query language builds on the lessons of 50+ years of query language design to provide a declarative, composable, easy-to-read, and type-safe way of describing computations related to time.",
+    "list": [
+      {
+        "title": "Stateful aggregations",
+        "content": "Aggregate events to produce a continuous timeline whose value can be observed at arbitrary points in time.",
+        "code": "# What is the highest review to date?  \nmax(review.stars)",
+        "image": "/assets/images/homepage/stateful-aggregations.png"
+      },
+      {
+        "title": "Automatic joins",
+        "content": "Every expression is associated with an “entity”, allowing tables and expressions to be automatically joined. Entities eliminate redundant boilerplate code.",
+        "code": "# How many purchases have been made per page view (combines tables)?\ncount(purchase) / count(pageview)",
+        "image": "/assets/images/homepage/automatic-joins.png"
+      },
+      {
+        "title": "Event-based windowing",
+        "content": "Collect events as you move through time, and aggregate them with respect to other events. Ordered aggregation makes it easy to describe temporal interactions.",
+        "code": "# How many pageviews have occurred since the last purchase?\ncount(pageview, window=since(purchase))\n\n# Auto-join purchases  # How much has been spent since the last review?\ncount(purchase, window=since(review))",
+        "image": "/assets/images/homepage/event-based-windowing.png"
+      },
+      {
+        "title": "Pipelined operations",
+        "content": "Pipe syntax allows multiple operations to be chained together. Write your operations in the same order you think about them. It's timelines all the way down, making it easy to aggregate the results of aggregations.",
+        "code": "# What's the largest spend on food over 2 purchases? purchase.amount \n| when(purchase.category == \"food\") \n| sum(window=sliding(2, $input)) # Inner aggregation\n| max() # Outer aggregation",
+        "image": "/assets/images/homepage/pipelined-operations.png"
+      },
+      {
+        "title": "Row generators",
+        "content": "Pivot from events to time-series. Unlike grouped aggregates, generators produce rows even when there's no input, allowing you to react when something doesn't happen.",
+        "code": "# How many signups occurred every hour (even if there were none)?\ncount(signups, window=since(daily())) \n| when(daily()) \n| mean()",
+        "image": "/assets/images/homepage/row-generators.png"
+      },
+      {
+        "title": "Continuous expressions",
+        "content": "Observe the value of aggregations at arbitrary points in time. Timelines are either “discrete” (instantaneous values or events) or “continuous” (values produced by a stateful aggregations). Continuous timelines let you combine aggregates computed from different event sources.",
+        "code": "# What is the average review for each purchased product? let product_average = review \n| with_key(review.product_id) \n| mean() in product_average \n| lookup(purchase.product_id))",
+        "image": "/assets/images/homepage/continuous-expressions.png"
+      },
+      {
+        "title": "Native time travel",
+        "content": "Shift values forward in time. …allows you to…",
+        "code": "# How many purchases have occurred in the last day?\nlet purchase_c = count(purchase)\nlet day_over_day_signups = purchase_c - ( # Start value “now”\npurchase_c | shift_by(days(1)) # Subtract the value a day ago)",
+        "image": "/assets/images/homepage/native-time-travel.png"
+      },
+      {
+        "title": "Simple, composable syntax",
+        "content": "It functions all the way down. No global state, no dependencies to manage, and no spooky action at a distance. Quickly understand what a query is doing, and painlessly refactor to make it DRY.",
+        "code": "# How many big purchases happen each hour and where? \nlet cadence = hourly()  # Anything can be named and re-used \nlet hourly_big_purchases = purchase \n| when(purchase.amount > 10)     # Filter anywhere \n| count(window=since(cadence))   # Aggregate anything  \n| when(cadence)                  # No choosing between “when” & “having” \n\nin {hourly_big_purchases}        # Records are just another type \n| extend({    # …modify them sequentially\n       last_visit_region: last(pageview.region)})"
+      },
+      {
+        "title": "Schema please!",
+        "content": "This is the schema used for these examples",
+        "code": "review: {product_id: string, stars: u64}\npurchase: {amount: f64, category: string}\npageview: {url: string, region: string}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+.mktoForm {
+  padding: 0;
+  width: 100% !important;
+
+  .mktoOffset,
+  .mktoGutter,
+  .mktoAsterix {
+    display: none !important;
+  }
+
+  .mktoClear {
+    clear: none !important;
+  }
+
+  .mktoFormCol,
+  .mktoFieldWrap,
+  .mktoField {
+    float: none !important;
+    margin: 0;
+    width: 100% !important;
+  }
+
+  .mktoFormRow {
+    clear: none !important;
+
+    &:not(:first-of-type) {
+      margin-top: 1rem !important;
+    }
+  }
+
+  .mktoFieldWrap,
+  .mktoFieldWrap.mktoRequiredField {
+    .mktoLabel,
+    label.mktoLabel {
+      align-items: center;
+      color: #000 !important;
+      display: flex;
+      font-family: "Noto Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.5em;
+      color: #000000;
+      margin-bottom: 2px;
+      width: 100% !important;
+
+      .mktoAsterix {
+        margin-right: 0.5em;
+      }
+
+      * {
+        color: inherit;
+        font: inherit;
+      }
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="search"],
+    input,
+    select,
+    textarea {
+      background-color: #fff;
+      border-radius: 6px;
+      border: 1px solid #778393;
+      font-family: "Noto Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      outline-offset: 0;
+      padding: 0.5rem 0.75rem;
+      width: 100% !important;
+
+      &:focus,
+      &:focus-visible {
+        outline-color: $primary;
+      }
+    }
+  }
+
+  .mktoButtonRow,
+  .mktoButtonRow .mktoButtonWrap {
+    margin: 0 !important;
+    display: flex;
+    width: 100%;
+
+    .mktoButton {
+      align-items: center;
+      appearance: none;
+      background: #fff;
+      border: 2px solid $primary;
+      border-radius: 10px;
+      color: #26364a;
+      display: inline-flex;
+      font-family: "Sora", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      justify-content: center;
+      letter-spacing: 0.06em;
+      line-height: 1rem;
+      outline: none;
+      text-transform: uppercase !important;
+      width: 100%;
+      padding: 10px 20px;
+
+      &:hover:not(:disabled) {
+        background: $primary;
+        color: #fff;
+      }
+    }
+  }
+
+  .mktoFormRow + .mktoButtonRow {
+    margin-top: 2rem !important;
+  }
+
+  .mktoHtmlText {
+    font-size: 0.75rem !important;
+    line-height: 1.125rem;
+    width: 100% !important;
+
+    * {
+      color: inherit !important;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .mktoError {
+    left: 0 !important;
+    right: auto !important;
+  }
+}
