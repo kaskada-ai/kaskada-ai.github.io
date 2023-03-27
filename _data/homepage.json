@@ -100,13 +100,13 @@
       {
         "title": "Continuous expressions",
         "content": "Observe the value of aggregations at arbitrary points in time. Timelines are either “discrete” (instantaneous values or events) or “continuous” (values produced by a stateful aggregations). Continuous timelines let you combine aggregates computed from different event sources.",
-        "code": "# What is the average review for each purchased\n# product?\nlet product_average = review\n| with_key(review.product_id)\n| mean()\nin product_average\n| lookup(purchase.product_id))",
+        "code": "# Compute the average review for each product?\nlet product_average = review\n| with_key(review.product_id)\n| mean()\n# Each purchase joined with average\nin product_average | lookup(purchase.product_id))",
         "image": "/assets/images/homepage/continuous-expressions.png"
       },
       {
         "title": "Native time travel",
         "content": "Shift values forward in time. …allows you to…",
-        "code": "# How many purchases have occurred in the last day?\nlet purchase_c = count(purchase)\nlet day_over_day_signups = purchase_c - (\n  # Start value “now”\n  purchase_c | shift_by(days(1))\n  # Subtract the value a day ago\n)",
+        "code": "# How many purchases have occurred in the last day?\nlet purchases_now = count(purchase)\nlet purchases_yesterday =\n   purchases_now | shift_by(days(1))\nin purchases_now - purchases_yesterday",
         "image": "/assets/images/homepage/native-time-travel.png"
       },
       {
