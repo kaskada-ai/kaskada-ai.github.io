@@ -5,7 +5,6 @@ image: assets/images/blog/announcing-kaskada-oss.png
 featured: true
 ---
 
-
 Today, we’re announcing the open-source release of Kaskada – a modern, open-source event processing engine.
 
 # How it began: Simplifying ML
@@ -45,7 +44,9 @@ The columnar event-processing engine within Kaskada scales to X million events/s
 
 # What’s coming next?
 
-Our first goal was getting the project released. Now that it is out there, we are looking to improve the project in multiple dimensions.
+Our first goal was getting the project released. Now that it is out there, we are excited to see where the project goes!
+
+Some improvements on our mind are shown below. We look forward to hearing your thoughts on what would help you process events.
 
 1.  **Increase extensibility and participate in the larger open-source community.**
     - Introduce extension points for I/O connectors and contribute connectors for a larger set of supported formats.
