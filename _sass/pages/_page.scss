@@ -1,4 +1,4 @@
-.community {
+.simple {
   margin-top: -2rem;
 
   @include media-breakpoint-up(lg) {
@@ -38,20 +38,6 @@
       }
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='360' height='569' viewBox='0 0 360 569' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3 536V536.273C93.391 557.664 162.624 567.91 218.412 568.75H233.124C286.618 567.914 327.33 557.808 363 540.178V536H3Z' fill='%23F7F8FA'/%3E%3Crect y='30' width='360' height='506' fill='%23F7F8FA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M128.313 2.0867e-06C91.1153 0.00446838 51.0529 7.17934 0 29.1939V30H360V25.0461C303.728 25.0461 260.412 17.5114 221.296 10.7074C189.108 5.1082 159.763 0.00376945 128.382 2.0867e-06C128.359 -6.95259e-07 128.336 -6.95877e-07 128.313 2.0867e-06Z' fill='%23F7F8FA'/%3E%3C/svg%3E%0A");
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      width: 100%;
-      padding-top: 156.75%;
-      z-index: -1;
-    }
-
     @include media-breakpoint-up(lg) {
       padding-top: 6rem;
 
@@ -68,12 +54,6 @@
         .btn {
           display: inline-block;
         }
-      }
-
-      &::before {
-        background-image: url("data:image/svg+xml,%3Csvg width='1440' height='433' viewBox='0 0 1440 433' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 302V303.094C361.564 388.657 638.497 429.64 861.648 433H920.497C1134.47 429.655 1297.32 389.231 1440 318.711V302H0Z' fill='%23F7F8FA'/%3E%3Crect y='120' width='1440' height='182' fill='%23F7F8FA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M513.252 8.34681e-06C364.461 0.0178735 204.211 28.7173 0 116.776V120H1440V100.184C1214.91 100.184 1041.65 70.0457 885.186 42.8295C756.43 20.4328 639.051 0.0150778 513.53 8.34681e-06C513.437 -2.78103e-06 513.344 -2.78351e-06 513.252 8.34681e-06Z' fill='%23F7F8FA'/%3E%3C/svg%3E%0A");
-        width: 100%;
-        padding-top: 30%;
       }
     }
   }
