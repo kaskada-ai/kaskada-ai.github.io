@@ -113,11 +113,6 @@
         "title": "Simple, composable syntax",
         "content": "It functions all the way down. No global state, no dependencies to manage, and no spooky action at a distance. Quickly understand what a query is doing, and painlessly refactor to make it DRY.",
         "code": "# How many big purchases happen each hour and where?\nlet cadence = hourly()\n# Anything can be named and re-used\nlet hourly_big_purchases = purchase\n| when(purchase.amount > 10)\n# Filter anywhere \n| count(window=since(cadence))\n# Aggregate anything\n| when(cadence)\n# No choosing between “when” & “having”\n\nin {hourly_big_purchases}\n# Records are just another type\n| extend({\n  # …modify them sequentially\n  last_visit_region: last(pageview.region)\n})"
-      },
-      {
-        "title": "Schema please!",
-        "content": "This is the schema used for these examples",
-        "code": "review: {product_id: string, stars: u64}\npurchase: {amount: f64, category: string}\npageview: {url: string, region: string}"
       }
     ]
   }
