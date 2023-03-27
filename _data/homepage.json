@@ -26,15 +26,15 @@
     "list": [
       {
         "title": "Modern",
-        "content": "Built on the latest in efficient, GC-free, columnar computation and packaged up to install and run locally on your existing hardware easily. High-efficiency compute means most workloads fit on a single instance, but Kaskada is cloud-native so you can scale when needed."
+        "content": "Built on the latest in efficient, GC-free, columnar computation and packaged up to easily install and run locally on your existing hardware. High-efficiency compute means most workloads fit on a single instance, but Kaskada is cloud-native so you can scale when needed."
       },
       {
-        "title": "Stream-native",
+        "title": "Streaming-native",
         "content": "Declaratively express queries over partitioned, ordered streams without lossy mappings from streams to relational models. Queries freely combine rich analytic transformations and aggregations with order-dependent temporal and sequential operations."
       },
       {
         "title": "Unified batch and streaming",
-        "content": "Columnar compute allows you to execute analytic queries over large historical event datasets in seconds. End-to-end incremental execution allows you to maintain real-time query results computed over event streams efficiently. Kaskada's stream-native query language means any query can be used, unchanged, in either context."
+        "content": "Columnar compute allows you to execute analytic queries over large historical event datasets in seconds. End-to-end incremental execution allows you to maintain real-time query results computed over event streams efficiently. Kaskada's streaming-native query language means any query can be used, unchanged, for both purposes."
       }
     ]
   },
@@ -43,7 +43,7 @@
     "list": [
       {
         "title": "Machine Learning",
-        "content": "Compute event-based features at arbitrary, data-dependent, points in time in historical feature computation. Prevent data leakages, or accidental computation of future events that contaminate ML models."
+        "content": "Compute event-based features at arbitrary, data-dependent, points in time in historical feature computation. Prevent data leakage, or accidental computation of future events that contaminate ML models."
       },
       {
         "title": "Analytics",
@@ -111,7 +111,7 @@
       },
       {
         "title": "Simple, composable syntax",
-        "content": "It functions all the way down. No global state, no dependencies to manage, and no spooky action at a distance. Quickly understand what a query is doing, and painlessly refactor to make it DRY.",
+        "content": "It is functions all the way down. No global state, no dependencies to manage, and no spooky action at a distance. Quickly understand what a query is doing, and painlessly refactor to make it DRY.",
         "code": "# How many big purchases happen each hour and where?\nlet cadence = hourly()\n# Anything can be named and re-used\nlet hourly_big_purchases = purchase\n| when(purchase.amount > 10)\n# Filter anywhere \n| count(window=since(cadence))\n# Aggregate anything\n| when(cadence)\n# No choosing between “when” & “having”\n\nin {hourly_big_purchases}\n# Records are just another type\n| extend({\n  # …modify them sequentially\n  last_visit_region: last(pageview.region)\n})"
       }
     ]
