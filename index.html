@@ -128,9 +128,10 @@ className: home
         <div class="col-lg-4 d-flex mb-4">
           <div class="card card--post">
             <div class="card-body">
-              <h4>
+              <a href="{{ post.url | relative_url }}"><h4>
                 {{ post.title | escape }}
               </h4>
+              </a>
               <h5>
                 {% if post.author %}
                   <span>by {{ post.author }} · </span>
