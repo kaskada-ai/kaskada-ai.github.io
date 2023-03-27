@@ -4,6 +4,9 @@ title: How data science and machine learning toolsets benefit from Kaskada’s t
 image: https://images.ctfassets.net/fkvz3lhe2g1w/52tLI3LD7jKINxtLL9KjvM/55885af5d9f7eb35d5b8a95e4504a183/Screenshot_2022-12-05_at_2.28.47_PM.png?w=2880
 author: Brian Godsey
 ---
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 ## Part 1 — Kaskada Was Built for Event-Based Data
 
 This is the first part in our “How data science and machine learning toolsets benefit from Kaskada’s time-centric design" series, illustrates how data science and machine learning (ML) toolsets benefit from Kaskada’s time-centric design, and specifically how Kaskada’s feature engineering language, FENL, makes defining and calculating features on event-based data simpler and more maintainable than the equivalents in the most common languages for building features on data, such as SQL and Python Pandas.
@@ -19,13 +22,13 @@ Devices, networks, and humans are constantly taking actions that are converted i
 Some properties of event data are not common in other data types, such as:
 
 1.  Events are point-in-time actions or statuses of specific software components, often without any context or knowledge of the rest of the system.
-    
+
 2.  Event timestamps can be at arbitrary, irregular times, sometimes down to the nanosecond or smaller.
-    
+
 3.  Events of different but related types often contain different sets of information, making it hard to combine them into one table with a fixed set of columns.
-    
+
 4.  Event aggregations can standardize information for specific purposes, e.g. hourly reporting, but inherently lose valuable granularity for other purposes, e.g. machine learning.
-    
+
 
 None of these challenges are insurmountable by themselves, but when considered together, and in the context of event data being used for many purposes downstream, it can be particularly hard to make data pipeline choices that are efficient, both from a runtime perspective as well as a development and maintenance standpoint.
 
@@ -111,7 +114,7 @@ See the example features written below in both SQL and FENL, and the notebook li
       , hourly_agg.event_hour_end_epoch
       , hourly_agg.event_count_hourly
       , hourly_agg.revenue_hourly
-      
+
       /* features from all of history */
       , count (*) as event_count_total
       , sum (events_augmented. revenue) as revenue_total
@@ -146,7 +149,7 @@ in {
   last_event_at_epoch: CodeComparisonEvents.event_at | last () | seconds_between(epoch_start, $input) as 164,
 }
 
-| when (hourly()) 
+| when (hourly())
 ```
 
 FENL, in this example, allows us to write a set of feature definitions in one place, in one query block (plus some variable assignments for conciseness and readability). It is not a multi-stage, multi-CTE query with multiple JOIN and GROUP BY clauses, like the equivalent in SQL, which adds complexity and lines of code, and increases the chances of introducing bugs into the code.

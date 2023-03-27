@@ -3,6 +3,9 @@ layout: post
 title: The Kaskada Feature Engine Understands Time
 image: https://images.ctfassets.net/fkvz3lhe2g1w/7wzGBKVlTO5CvTue4XJ3tl/56ac2361df0a6bf465b80efcaba3d2eb/Copy_of_Feature_Engines__1_.png?w=2880
 ---
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 This is the second part in our “How data science and machine learning toolsets benefit from Kaskada’s time-centric design” series, illustrating how data science and machine learning (ML) toolsets benefit from Kaskada’s time-centric design, and specifically how Kaskada’s feature engineering language, FENL, makes defining and calculating features on event-based data simpler and more maintainable than the equivalents in the most common languages for building features on data, such as SQL and Python Pandas.
 
 Part 1 of this series —  **_Kaskada Was Built for Event-Based Data_**  — gives an introduction to the challenges of working with event-based data, and how Kaskada makes defining features straight-forward.
@@ -14,11 +17,11 @@ Events, by definition, include some concept of time: when did the event happen? 
 When a time variable is important in data processing or feature engineering, we often do two things:
 
 1.  Index our data store along a time dimension
-    
+
 2.  Partition the data by the entity we want to understand or make predictions about
-    
+
 3.  Do lots of aggregations and/or JOINs on a time dimension
-    
+
 
 When storing data, indexing and partitioning is crucial for maintaining computational efficiency. In very large datasets, locating data for a particular point or narrow range in time and entity can be incredibly inefficient if the data is not indexed and partitioned correctly. So, when time matters, we make sure to index and store the data in a way that makes it easy to access the correct data from the correct time and partition the data to improve parallelization.
 
@@ -35,11 +38,11 @@ In short, FENL provides the abstractions and Kaskada provides the calculation en
 Time is an ordered, numeric quantity, which is particularly obvious when it appears in a Unix/epoch format—seconds since the midnight preceding January 1st, 1970 is a real number that goes up into the future, and down into the past. However, time has some properties that many other numeric quantities do not:
 
 1.  Time is generally linear—a second in the future is equivalent to a second in the past, and rarely do we use time itself on an exponential or logarithmic scale, though many variables depend on time in non-linear ways.
-    
+
 2.  Periods of time exist whether we have data for them or not—the hours and seconds during holidays, lunch breaks, and system downtime still appear on a clock somewhere, even if no data was produced during that time.
-    
+
 3.  For event-based data, time is an implicit attribute—events have at least a relative time of occurrence, by definition, and without it an event can lose most or all of its context and meaning.
-    
+
 
 These properties of time provide opportunities for feature engines to make some starting assumptions and to build both syntactic and computational optimizations for calculating feature values over time variables. It is a purpose-built machine that is largely superior to general-purpose machines when used for the appropriate purposes, but which may be inferior for use cases beyond its design. Because transformations and calculations on time variables are very common, there are lots of practical opportunities for the Kaskada feature engine and FENL to improve upon general-purpose tools like SQL- and python-based feature stores.
 
@@ -104,7 +107,7 @@ select
      , avg(event_count) over (
          order by date rows between 29 preceding and current row
      ) as avg_30day_event_count
-from 
+from
      events_table
 ```
 
@@ -114,10 +117,10 @@ We can aggregate to daily rows as in the previous section above. Filling in miss
 
 ```
 /* a recursive CTE for generating a single `event_day_end` column that increments by 1 day */
-       with recursive day_list(event_day_end) as ( 
+       with recursive day_list(event_day_end) as (
            /* start at the first day in the data*/
            values( (select min(event_day_end) from events_table) )
-           union all          
+           union all
            select
                datetime(strftime('%Y-%m-%d %H:00:00', event_day_end), '+1 day')
            from
@@ -131,13 +134,13 @@ We would then JOIN our table/CTE of daily aggregations to this date spine, and r
 To reiterate, to use SQL to get 30-day rolling average event counts, we would:
 
 1.  Aggregate the event data by date
-    
+
 2.  Build a date spine
-    
+
 3.  JOIN the daily aggregation to the date spine
-    
+
 4.  Apply a rolling window function
-    
+
 
 Each of these steps would be one CTE, more or less, but of course you could combine them into more compact but less readable queries. There are other ways to do this in SQL that avoid window functions, but which still involve most or all of the other steps, plus additional ones.
 
@@ -147,7 +150,7 @@ In FENL, we don’t need a date spine or a JOIN, and we can apply the aggregatio
 {
 entity_id,
 timestamp,
-avg_30day_event_count: EventsTable 
+avg_30day_event_count: EventsTable
         | count(window=since(daily()))
         | mean(window=sliding(30, daily()))
 }

@@ -20,5 +20,5 @@ bundle install
 
 Run the script
 ```
-bundle exec jekyll jekyll serve --livereload --open-url --drafts
+bundle exec jekyll serve --livereload --open-url --drafts
 ```

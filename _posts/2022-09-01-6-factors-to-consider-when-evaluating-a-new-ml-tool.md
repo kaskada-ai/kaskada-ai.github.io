@@ -4,6 +4,9 @@ title: 6 Factors to Consider When Evaluating a New ML Tool
 image: https://images.ctfassets.net/fkvz3lhe2g1w/1WuuONqGM0oF0P227UgikU/0d34dbd046c08973dc9190bed73f6c6f/Screenshot_2022-12-05_at_2.22.21_PM.png?w=2880
 author: Ben Chambers
 ---
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 The incredible hype surrounding machine learning has precipitated a vast ecosystem of tools designed to support data scientists in the model development lifecycle. However, this has also made selecting the right suite of tools more challenging, as there are now so many different options to choose from. When evaluating a particular product, the key is to assess if, and how, it will enable you to perform your job more reliably, quickly, and impactfully. Towards that end, what follows are 6 factors to consider that you can use to better understand how Kaskada will impact your existing workflow.
 
 #### 1. Development Velocity and Throughput

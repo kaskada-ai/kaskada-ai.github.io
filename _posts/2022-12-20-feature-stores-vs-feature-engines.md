@@ -3,6 +3,9 @@ layout: post
 title: Feature Stores vs. Feature Engines
 image: https://images.ctfassets.net/fkvz3lhe2g1w/4H5Y6rZVlXFDoXFbUAVs3D/c7da1500d10707df781fd5c1ffe5aac1/Feature-Stores-_-Feature-Engines-480x260_3x.png?w=2880
 ---
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 # Introduction
 
 In the ML world, feature stores are all the rage. They bring the power of MLOps to feature orchestration by providing a scalable architecture that stores and computes features from raw data and serves those features within a production environment. Feature stores may automate many of the more tedious tasks associated with feature handling such as versioning and monitoring features in production for drift. This sort of automation of the feature computation and deployment process makes it easy to get from experimentation to production and reuse feature definitions, allowing data scientists to hand off production-ready features to development teams for their machine learning models. What’s not to like?

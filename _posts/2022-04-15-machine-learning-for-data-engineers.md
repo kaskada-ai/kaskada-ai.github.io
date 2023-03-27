@@ -4,6 +4,10 @@ image: https://images.ctfassets.net/fkvz3lhe2g1w/6tXVe1ZpcONVoTOpBC1Zgt/fb5bac0a
 title: Machine Learning for Data Engineers
 author: Ben Chambers
 ---
+
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+{: .note }
+
 As a data engineer, it is helpful to have a high-level understanding of machine learning to know how best to support data scientists in creating great models. This article explains some of the terms and how the high-level process works. My experience is as a Software engineer and a data engineer, so I’ll try to explain how I understand things, which may resonate with your experiences. This understanding developed over several years of working closely with some amazing data scientists, who have also helped review this for the correct usage of terms and concepts. You probably won’t be able to create a model after reading this, but you will better understand how you can help data scientists create a model.
 
 # What is a Model?
@@ -33,13 +37,13 @@ We’re almost done, but so far we’ve only talked about predicting one value f
 Even with these simple models, we have seen a few important aspects of machine learning:
 
 1.  Different problems may be solved better by different kinds of models.
-    
+
 2.  By looking at (visualizing) the data, we can gain useful insights.
-    
+
 3.  The quality of the model depends on the quality of the training data.
-    
+
 4.  We can create models that predict the future by creating training examples with time between predictors and targets.
-    
+
 
 Models often differ from these simple examples by having more than a single predictor feature. Imagine the function being fit takes more than a single x value. Instead, it takes a  _vector_  containing many different predictor features. This is where the term  _feature vector_  comes from – it’s simply a vector of feature values. For instance, training a model to predict future activity may use the number of movies watched in several different categories as the features.
 
