@@ -19,64 +19,51 @@ The unique characteristics of Kaskada make it ideal for the time-based event pro
 
 # Modern, Open-Source Event Processing
 
-When DataStax acquired Kaskada a few months ago, we began the process of open-sourcing the core Kaskada technology. In the conversations that followed, we realized that the capabilities of Kaskada that make it ideal for real-time ML – easy to use, high-performance columnar computations over event-based data – also make it great for general event processing. These features include:
+When [DataStax acquired Kaskada](https://www.datastax.com/press-release/datastax-acquires-machine-learning-company-kaskada-to-unlock-real-time-ai) a few months ago, we began the process of open-sourcing the core Kaskada technology. In the conversations that followed, we realized that the capabilities of Kaskada that make it ideal for real-time ML – easy to use, high-performance columnar computations over event-based data – also make it great for general event processing. These features include:
 
-1.  Rich, Temporal Operations: The ability to easily express computations over time beyond windowed aggregations. For instance, when computing training data it was often necessary to compute values at a point in time in the past and combine those with a label value computed at a later point in time. This led to a powerful set of operations for working with time.
-    
-2.  Events all the way down: The ability to run a query both to get all results over time and just the final results. This means that Kaskada operates directly on the events – turning a sequence of events into a sequence of changes, which may be observed directly or materialized to a table. By treating everything as events, the temporal operations are always available and you never need to think about the difference between streams and tables, nor do you need to use different APIs for each.
-    
-3.  Modern and easy to use: Kaskada is built in Rust and uses Apache Arrow for high-performance, columnar computations. It consists of a single binary which makes for easy local and cloud deployments.
+1. **Rich, Temporal Operations**: The ability to easily express computations over time beyond windowed aggregations. For instance, when computing training data it was often necessary to compute values at a point in time in the past and combine those with a label value computed at a later point in time. This led to a powerful set of operations for working with time.
+2. **Events all the way down**: The ability to run a query both to get all results over time and just the final results. This means that Kaskada operates directly on the events – turning a sequence of events into a sequence of changes, which may be observed directly or materialized to a table. By treating everything as events, the temporal operations are always available and you never need to think about the difference between streams and tables, nor do you need to use different APIs for each.
+3. **Modern and easy to use**: Kaskada is built in Rust and uses Apache Arrow for high-performance, columnar computations. It consists of a single binary which makes for easy local and cloud deployments.
     
 
-This led to the decision to open source Kaskada as a modern, open-source event-processing language and native engine. Machine learning is still a great use case of Kaskada, but we didn’t want the feature engine label to constrain community creativity and innovation. It’s all available today in the GitHub repository under the Apache 2.0 License.
+This led to the decision to open source Kaskada as a modern, open-source event-processing language and native engine. Machine learning is still a great use case of Kaskada, but we didn’t want the feature engine label to constrain community creativity and innovation. It’s all available today in the [GitHub repository](https://github.com/kaskada-ai/kaskada) under the Apache 2.0 License.
 
 # Why use Kaskada?
 
 Kaskada is for you if…
 
-1.  You want to visualize the results of your query over time.  
-    Operating over time all the way down means that Kaskada makes it easy to visualize the result of any query over time.
-    
-2.  You want to express temporal computations without writing pages of SQL.  
-    Kaskada provides a declarative language for event-processing. Because of the focus on temporal computations and composability, it is much easier and shorter than comparable SQL queries.
-    
-3.  You want to process events today without setting up other tools.  
-    The columnar event-processing engine within Kaskada scales to X million events/second running on a single machine. This lets you get started and iterate quickly without becoming an expert in cluster management or big-data tools.
+1. **You want to compute the results of your query over time.**
+Operating over time all the way down means that Kaskada makes it easy to compute the result of any query over time.
+
+2. **You want to express temporal computations without writing pages of SQL.**
+Kaskada provides a declarative language for event-processing. Because of the focus on temporal computations and composability, it is much easier and shorter than comparable SQL queries.
+
+3. **You want to process events today without setting up other tools.**
+The columnar event-processing engine within Kaskada scales to X million events/second running on a single machine. This lets you get started and iterate quickly without becoming an expert in cluster management or big-data tools.
     
 
 # What’s coming next?
 
 Our first goal was getting the project released. Now that it is out there, we are looking to improve the project in multiple dimensions.
 
-1.  Further align query capabilities with more general, event-processing use cases.
-    
+1. **Further align query capabilities with more general, event-processing use cases.**
+    - Ability to create composite events from patterns of existing events and subsequently process those composite events (“CEP”).
+    - Improvements to the declarative language to reduce surprises, make it more familiar to new users, and make it even easier to express temporal computations over events.
 
-1.  Ability to create composite events from patterns of existing events and subsequently process those composite events (“CEP”).
-    
-2.  Improvements to the declarative language to reduce surprises, make it more familiar to new users, and make it even easier to express temporal computations over events.
-    
+2.  **Continue to improve local performance and usability.**
+    - Make it possible to use the engine more easily in a variety of ways – via a command line REPL, via an API, etc.
+    - Improve performance and latency of real-time and partitioned execution within the native engine.
 
-3.  Continue to improve local performance and usability.
-    
-
-1.  Make it possible to use the engine more easily in a variety of ways – via a command line REPL, via an API, etc.
-    
-2.  Improve performance and latency of real-time and partitioned execution within the native engine.
-    
-
-5.  Increase extensibility and participate in the larger open-source community.
-    
-
-1.  Introduce extension points for I/O connectors and contribute connectors for a larger set of supported formats.
-    
-2.  Expose a logical execution plan after the language constructs have been compiled away, so that other executors may be developed using the same parsing and type-checking rules.
-    
-3.  Introduce extension points for custom schema catalogs, allowing Kaskada queries to be compiled against existing data catalogs.
-    
+3.  **Increase extensibility and participate in the larger open-source community.**
+    - Introduce extension points for I/O connectors and contribute connectors for a larger set of supported formats.
+    - Expose a logical execution plan after the language constructs have been compiled away, so that other executors may be developed using the same parsing and type-checking rules.
+    - Introduce extension points for custom schema catalogs, allowing Kaskada queries to be compiled against existing data catalogs.
 
 # How can I contribute?
 
-Give it a try – download one of the releases and run some computations on your event data. Let us know how it works for you, and what you’d like to see improved!
+Give it a try – [download one of the releases](https://github.com/kaskada-ai/kaskada/releases) and run some computations on your event data. Let us know how it works for you, and what you’d like to see improved!
+
+We’d love to hear what you think - please comment or ask on our [Kaskada GitHub discussions page](https://github.com/kaskada-ai/kaskada/discussions).
 
 Help spread the word – Star and Follow the project on GitHub!
 
