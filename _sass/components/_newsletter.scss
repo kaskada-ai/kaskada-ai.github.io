@@ -1,9 +1,12 @@
 .newsletter {
-  padding: 1.5rem;
-  background: #f7f8fa;
-  border-radius: 10px;
-  margin-bottom: 4rem;
-  z-index: 1050;
+  height: 100%;
+  
+  .newsletter-sticky {
+    padding: 1.5rem;
+    background: #f7f8fa;
+    border-radius: 10px;
+    margin-bottom: 4rem;
+  }
 
   .modal-header {
     border-bottom: 0;
@@ -45,10 +48,11 @@
   }
 
   @include media-breakpoint-up(lg) {
-    position: -webkit-sticky;
-    position: sticky;
-    top: calc(var(--navbar-height) + 24px);
-    padding: 1.5rem 2rem;
+    .newsletter-sticky {
+      position: sticky;
+      top: calc(var(--navbar-height) + 24px);
+      padding: 1.5rem 2rem;
+    }
 
     .modal-body,
     .modal-header {

@@ -1,28 +1,31 @@
 <div class="newsletter">
-  <h4>SIGN UP FOR UPDATES</h4>
-  <form class="form" newsletter-form>
-    <label for="email">Email Address</label>
-    <div class="form-row">
-      <div class="col-md-7">
-        <input
-          type="email"
-          class="form-control"
-          id="newsletter-email"
-          name="email"
-          placeholder=""
-        />
+  <div class="newsletter-sticky">
+    <h4>SIGN UP FOR UPDATES</h4>
+    <div newsletter-status></div>
+    <form class="form" newsletter-form>
+      <label for="email">Email Address</label>
+      <div class="form-row">
+        <div class="col-md-7">
+          <input
+            type="email"
+            class="form-control"
+            id="newsletter-email"
+            name="email"
+            placeholder=""
+          />
+        </div>
+        <div class="col-md-5">
+          <button
+            type="submit"
+            class="btn btn-block btn-outline-primary"
+            disabled
+          >
+            Subscribe
+          </button>
+        </div>
       </div>
-      <div class="col-md-5">
-        <button
-          type="submit"
-          class="btn btn-block btn-outline-primary"
-          disabled
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
   <div
     class="modal fade"

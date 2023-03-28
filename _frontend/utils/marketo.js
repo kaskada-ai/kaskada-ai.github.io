@@ -63,6 +63,25 @@ function initializeNewsletter(form) {
       document.querySelector("#mktoForm_4727 #Email").focus();
     }, 500);
   });
+
+  form.onValidate(function onValidate(isValid) {
+    if (!isValid) {
+      alert("Please fill all the required fields and try again.");
+    }
+  });
+
+  form.onSuccess(function onSuccess() {
+    const $status = document.querySelector("div[newsletter-status]");
+    const $form = document.querySelector("form[newsletter-form]");
+
+    $form.style.display = "none";
+    $status.innerHTML = "<strong>Thanks for subscribing!</strong><br><span>The latest articles on all things data will be delivered straight to your inbox now.</span>";
+    $("#newsletter-modal").modal("hide");
+    
+
+    // Disable redirection
+    return false;
+  })  
 }
 
 export function loadMarketoForms() {
@@ -81,4 +100,13 @@ export function loadMarketoForms() {
       });
     });
   }
+}
+
+export function enableMarketoDebugger() {
+  const $container = document.querySelector("div[blog-post-container]");
+  const $contentCol = $container.querySelector("div[class=\"col-md-12\"]");
+  const $newsletterCol = $container.querySelector("div[class=\"col-md-5 d-none\"]");
+  $contentCol.classList.remove("col-md-12");
+  $contentCol.classList.add("col-md-7");
+  $newsletterCol.classList.remove("d-none");
 }
