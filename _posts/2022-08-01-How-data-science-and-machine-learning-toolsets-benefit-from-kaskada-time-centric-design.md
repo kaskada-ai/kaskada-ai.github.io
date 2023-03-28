@@ -4,7 +4,7 @@ title: How data science and machine learning toolsets benefit from Kaskada’s t
 image: https://images.ctfassets.net/fkvz3lhe2g1w/52tLI3LD7jKINxtLL9KjvM/55885af5d9f7eb35d5b8a95e4504a183/Screenshot_2022-12-05_at_2.28.47_PM.png?w=2880
 author: Brian Godsey
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 ## Part 1 — Kaskada Was Built for Event-Based Data

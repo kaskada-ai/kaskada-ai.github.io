@@ -3,7 +3,7 @@ layout: post
 title: Why Kaskada? – The Three Reasons
 image: https://images.ctfassets.net/fkvz3lhe2g1w/2XchdjFAWhrOPRskIxFyWc/c1fa37941af7eb93573d2046c6299425/Copy_of_Why_Kaskada_____For_Data_Scientists.png?w=2880
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 Kaskada accelerates your model training workflows by allowing you to easily create and iterate on new features from event-based data. In doing so, data scientists and engineers can now control the context of model predictions. For example, Kaskada allows data scientists to assess whether a model is best suited to predict on a daily/hourly basis or to make predictions in real-time—as users are about to take action or make a purchase decision—flexibility that allows them to understand customer behavior better. Additionally, they can rapidly ship features to production and accelerate the model development lifecycle.
