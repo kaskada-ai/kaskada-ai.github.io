@@ -1,14 +1,14 @@
 <template>
-  <div class="card card--item">
+  <a :href="event.link" class="card card-link card--item">
     <div class="card-header"></div>
     <div class="card-body">
       <h4>{{ event.title }}</h4>
       <p>
         <span>{{ date }}</span>
       </p>
-      <a :href="event.link">Read More</a>
+      <span class="btn btn-link">Register Now</span>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>

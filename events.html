@@ -40,7 +40,7 @@ className: collection
             {% endif %}
           </p>
           <h2>{{ featured.title }}</h2>
-          <a href="{{ featured.url | relative_url }}">Read More</a>
+          <a class="btn btn-link" href="{{ featured.url | relative_url }}">Register now</a>
         </div>
       </div>
     </div>
@@ -53,15 +53,15 @@ className: collection
     <div class="row">
       {% for event in site.events %}
       <div class="col-md-4 d-flex mb-4">
-        <div class="card card--item">
+        <a href="{{ event.url | relative_url }}" class="card card-link card--item">
           <div class="card-body">
             <h4>{{ event.title }}</h4>
             <p>
               <span>{{ event.date | date: "%b %-d, %Y" }}</span>
             </p>
-            <a href="{{ event.url | relative_url }}">Read More</a>
+            <span class="btn btn-link">Read More</span>
           </div>
-        </div>
+        </a>
       </div>
       {% endfor %}
     </div>

@@ -12,6 +12,32 @@
     }
   }
 
+  &-link {
+    text-decoration: none;
+    transition: box-shadow 0.2s ease;
+
+    .btn-link {
+      font-family: "Sora";
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.2em;
+      letter-spacing: 0.05em;
+      color: #26364a;
+      margin-top: auto;
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 24px rgba(26, 26, 48, 0.1);
+
+      .btn-link {
+        &::after {
+          margin-left: 0.5em;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &-simple {
     box-shadow: none;
 
