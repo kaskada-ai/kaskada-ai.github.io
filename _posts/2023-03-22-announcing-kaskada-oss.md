@@ -3,6 +3,7 @@ layout: post
 title: Announcing Kaskada OSS
 image: assets/images/blog/announcing-kaskada-oss.png
 featured: true
+author: Ben Chambers
 ---
 
 Today, we’re announcing the open-source release of Kaskada – a modern, open-source event processing engine.
