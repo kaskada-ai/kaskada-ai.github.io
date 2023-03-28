@@ -52,7 +52,7 @@ Below, we illustrate some of the most often seen benefits of the natural underst
 
 Some common data products that are generated from time-centric data involve designating a set of time intervals or buckets, and aggregating data in some way into these buckets. Hourly, daily, or monthly reporting involves—by definition—aggregating data by hour, day, or month. Data visualization over time also typically requires some aggregation into time buckets.
 
-In order to make use of them, time buckets need to be defined somewhere in any code, whether SQL, python/pandas, or FENL. In SQL and python, we have some concise ways to extract the hour, day, or month from date-time objects, and also to calculate those from Unix/epoch seconds—probably involving a couple of function calls for date-time truncation or object type conversion. In FENL, we can simply pass the standard functions hourly(), daily(), or monthly() as parameters to any relevant feature definition, and the Kaskada feature engine handles these time intervals in the natural way. See the  [section on Time Functions in the Kaskada Catalog](https://kaskada-ai.github.io/docs-site/kaskada/main/fenl/catalog.html#time-functions)  for more details.
+In order to make use of them, time buckets need to be defined somewhere in any code, whether SQL, python/pandas, or FENL. In SQL and python, we have some concise ways to extract the hour, day, or month from date-time objects, and also to calculate those from Unix/epoch seconds—probably involving a couple of function calls for date-time truncation or object type conversion. In FENL, we can simply pass the standard functions hourly(), daily(), or monthly() as parameters to any relevant feature definition, and the Kaskada feature engine handles these time intervals in the natural way. See the  [section on Time Functions in the Kaskada Catalog](https://kaskada.io/docs-site/kaskada/main/fenl/catalog.html#time-functions)  for more details.
 
 When performing the actual aggregations by time bucket, SQL or pandas would likely use a GROUP BY statement, which might look like this:
 
@@ -156,4 +156,4 @@ avg_30day_event_count: EventsTable
 }
 ```
 
-See our  [FENL vs SQL vs Python Pandas Colab notebook](https://colab.research.google.com/drive/1Wg02zrxrJI_EEN8sAtoEXsRM7u8oDdBw?usp=sharing)  for more detailed code examples, more details, information, and example notebooks are available on  [Kaskada’s documentation pages](https://kaskada-ai.github.io/docs-site).
+See our  [FENL vs SQL vs Python Pandas Colab notebook](https://colab.research.google.com/drive/1Wg02zrxrJI_EEN8sAtoEXsRM7u8oDdBw?usp=sharing)  for more detailed code examples, more details, information, and example notebooks are available on  [Kaskada’s documentation pages](https://kaskada.io/docs-site).
