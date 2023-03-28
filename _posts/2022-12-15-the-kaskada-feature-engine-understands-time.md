@@ -3,7 +3,7 @@ layout: post
 title: The Kaskada Feature Engine Understands Time
 image: https://images.ctfassets.net/fkvz3lhe2g1w/7wzGBKVlTO5CvTue4XJ3tl/56ac2361df0a6bf465b80efcaba3d2eb/Copy_of_Feature_Engines__1_.png?w=2880
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 This is the second part in our “How data science and machine learning toolsets benefit from Kaskada’s time-centric design” series, illustrating how data science and machine learning (ML) toolsets benefit from Kaskada’s time-centric design, and specifically how Kaskada’s feature engineering language, FENL, makes defining and calculating features on event-based data simpler and more maintainable than the equivalents in the most common languages for building features on data, such as SQL and Python Pandas.
