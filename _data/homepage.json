@@ -105,7 +105,7 @@
       },
       {
         "title": "Native time travel",
-        "content": "Shift values forward in time. …allows you to…",
+        "content": "Shift values forward (but not backward) in time, allowing you to combine different temporal contexts without the risk of temporal leakage. Shifted values make it easy to compare a value “now” to a value from the past.",
         "code": "# How many purchases have occurred in the last day?\nlet purchases_now = count(purchase)\nlet purchases_yesterday =\n   purchases_now | shift_by(days(1))\nin purchases_now - purchases_yesterday",
         "image": "/assets/images/homepage/native-time-travel.png"
       },
