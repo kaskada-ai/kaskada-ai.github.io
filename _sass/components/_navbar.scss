@@ -6,7 +6,7 @@
     padding-top: 3rem;
     align-items: stretch;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       height: auto;
       padding: 0;
       align-items: center;
@@ -36,7 +36,7 @@
       }
     }
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       display: inline-flex;
       order: 1;
       margin-bottom: 2rem;
@@ -60,7 +60,7 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       &:not(:last-of-type) {
         margin-right: 24px;
       }
