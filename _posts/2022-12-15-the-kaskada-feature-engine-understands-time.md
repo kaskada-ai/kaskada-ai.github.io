@@ -71,7 +71,7 @@ Non-pandas python would probably use a more manual strategy, like looping throug
 
 FENL’s syntax for the same would look something like this:
 
-```
+```fenl
 {
    entity_id,
    timestamp,
@@ -81,7 +81,7 @@ FENL’s syntax for the same would look something like this:
 
 While I could argue that FENL’s syntax is somewhat more concise here, it’s more important to point out that, if we wanted both the hourly and the daily event counts, SQL would require two separate CTEs and GROUP BYs (roughly double the amount of SQL code above), whereas FENL can do both in the same code block because FENL understands time, and features are defined independently, like so:
 
-```
+```fenl
 {
    entity_id,
    timestamp,
@@ -146,7 +146,7 @@ Each of these steps would be one CTE, more or less, but of course you could comb
 
 In FENL, we don’t need a date spine or a JOIN, and we can apply the aggregation and the rolling window using functions in the individual feature definition, as in:
 
-```
+```fenl
 {
 entity_id,
 timestamp,
