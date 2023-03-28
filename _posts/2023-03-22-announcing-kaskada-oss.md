@@ -2,6 +2,7 @@
 layout: post
 title: Announcing Kaskada OSS
 image: assets/images/blog/announcing-kaskada-oss.png
+author: Ben Chambers
 featured: true
 ---
 
