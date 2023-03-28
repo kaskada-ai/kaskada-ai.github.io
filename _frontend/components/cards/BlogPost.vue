@@ -1,5 +1,5 @@
 <template>
-  <div class="card card--item">
+  <a :href="post.link" class="card card-link card--item">
     <div class="card-header">
       <img
         v-if="post.image"
@@ -14,9 +14,9 @@
         <span v-if="post.author">by {{ post.author }} · </span>
         <span>{{ date }}</span>
       </p>
-      <a :href="post.link">Read More</a>
+      <span class="btn btn-link">Read More</span>
     </div>
-  </div>
+  </a>
 </template>
 
 <script>

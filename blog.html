@@ -27,22 +27,28 @@ pagination:
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img
-          class="img-fluid"
-          src="{{ featured.image | relative_url }}"
-          alt="{{ featured.title }}"
-        />
+        <a href="{{ featured.url | relative_url }}">
+          <img
+            class="img-fluid"
+            src="{{ featured.image | relative_url }}"
+            alt="{{ featured.title }}"
+          />
+        </a>
       </div>
       <div class="col-md-6 d-flex">
         <div class="featured-content">
-          <a href="{{ featured.url | relative_url }}"><h2>{{ featured.title }}</h2></a>
+          <a href="{{ featured.url | relative_url }}"
+            ><h2>{{ featured.title }}</h2></a
+          >
           <p>
             {% if featured.author %}
             <span>by {{ featured.author }} · </span>
             {% endif %}
             <span>{{ featured.date | date: "%b %-d, %Y" }}</span>
           </p>
-          <a href="{{ featured.url | relative_url }}">Read More</a>
+          <a class="btn btn-link" href="{{ featured.url | relative_url }}"
+            >Read More</a
+          >
         </div>
       </div>
     </div>
@@ -55,7 +61,10 @@ pagination:
     <div class="row">
       {% for post in paginator.posts %}
       <div class="col-md-4 d-flex mb-4">
-        <div class="card card--item">
+        <a
+          href="{{ post.url | relative_url }}"
+          class="card card-link card--item"
+        >
           <div class="card-header">
             {% if post.image %}
             <img
@@ -66,16 +75,16 @@ pagination:
             {% endif %}
           </div>
           <div class="card-body">
-            <a href="{{ post.url | relative_url }}"><h4>{{ post.title }}</h4></a>
+            <h4>{{ post.title }}</h4>
             <p>
               {% if post.author %}
               <span>by {{ post.author }} · </span>
               {% endif %}
               <span>{{ post.date | date: "%b %-d, %Y" }}</span>
             </p>
-            <a href="{{ post.url | relative_url }}">Read More</a>
+            <span class="btn btn-link">Read More</span>
           </div>
-        </div>
+        </a>
       </div>
       {% endfor %}
     </div>

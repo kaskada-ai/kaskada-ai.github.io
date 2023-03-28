@@ -126,12 +126,9 @@ className: home
     <div class="row">
       {% for post in site.posts limit: 3 %}
         <div class="col-lg-4 d-flex mb-4">
-          <div class="card card--post">
+          <a  href="{{ post.url | relative_url }}" class="card card-link card--post">
             <div class="card-body">
-              <a href="{{ post.url | relative_url }}"><h4>
-                {{ post.title | escape }}
-              </h4>
-              </a>
+              <h4>{{ post.title | escape }}</h4>
               <h5>
                 {% if post.author %}
                   <span>by {{ post.author }} · </span>
@@ -139,9 +136,9 @@ className: home
                 <span>{{ post.date | date: "%b %-d, %Y" }}</span>
               </h5>
 
-              <a href="{{ post.url | relative_url }}">Read More</a>
+              <span class="btn btn-link">Read More</span>
             </div>
-          </div>
+          </a>
         </div>
       {% endfor %}
     </div>
@@ -169,9 +166,9 @@ className: home
     </div>
 
     <div class="row">
-      {% for event in site.events %}
+      {% for event in site.events limit: 3 %}
       <div class="col-lg-4 d-flex mb-4">
-        <div class="card card--event">
+        <a href="{{ event.url | relative_url }}" class="card card-link card--event">
           <div class="card-body">
             <div class="card--event-details">
               <span>{{ event.date | date: "%b %-d, %Y" }}</span>
@@ -181,12 +178,10 @@ className: home
               {{ event.title }}
             </h4>
 
-            <a href="{{ event.url | relative_url }}">Register Now</a>
+            <span class="btn btn-link">Register Now</span>
           </div>
-        </div>
+        </a>
       </div>
-      {% else %}
-      NOT FOUND
       {% endfor %}
     </div>
 
