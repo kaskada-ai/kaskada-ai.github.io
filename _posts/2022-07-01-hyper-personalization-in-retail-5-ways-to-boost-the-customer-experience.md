@@ -3,7 +3,7 @@ layout: post
 image: https://images.ctfassets.net/fkvz3lhe2g1w/1IhSc2kXzJyqCXOJRsX0vI/4b259fc13ab9598e7f922fb1acb99242/Screenshot_2022-12-05_at_3.18.22_PM.png?w=2880
 title: "Hyper-personalization in Retail: 5 Ways to Boost the Customer Experience"
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 When it comes to shopping for a given product, consumers can choose from many different online and retail outlets, each of which is vying for their attention in an increasingly competitive marketplace. In order to stand out, retailers need to provide each customer with an individualized shopping experience that speaks uniquely to them. This is accomplished via  _hyper-personalization_, the application of AI and machine learning technology to learn from customer behavior and customize the shopping experience accordingly in order to match each consumer’s individual preferences. In doing so, retailers can better attract their target demographics, improve customer engagement, and ultimately increase customer lifetime value.

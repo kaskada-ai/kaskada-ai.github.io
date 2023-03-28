@@ -5,7 +5,7 @@ title: Machine Learning for Data Engineers
 author: Ben Chambers
 ---
 
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 As a data engineer, it is helpful to have a high-level understanding of machine learning to know how best to support data scientists in creating great models. This article explains some of the terms and how the high-level process works. My experience is as a Software engineer and a data engineer, so I’ll try to explain how I understand things, which may resonate with your experiences. This understanding developed over several years of working closely with some amazing data scientists, who have also helped review this for the correct usage of terms and concepts. You probably won’t be able to create a model after reading this, but you will better understand how you can help data scientists create a model.

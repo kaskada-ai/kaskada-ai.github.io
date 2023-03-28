@@ -3,7 +3,7 @@ layout: post
 title: Why Data Engineers Need Kaskada?
 image: https://images.ctfassets.net/fkvz3lhe2g1w/FafYi4yNNlk7MnW8MkDA2/74af3f28de77f37c0addc18eb9d616b2/Screenshot_2022-12-05_at_2.40.50_PM.png?w=2880
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 Building and deploying machine-learning (ML) models is challenging. It’s hard for many reasons, but one of the biggest is that the compute engines we use to build ML models were designed to solve different and incompatible problems.

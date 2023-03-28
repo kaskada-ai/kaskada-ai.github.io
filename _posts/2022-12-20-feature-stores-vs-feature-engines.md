@@ -3,7 +3,7 @@ layout: post
 title: Feature Stores vs. Feature Engines
 image: https://images.ctfassets.net/fkvz3lhe2g1w/4H5Y6rZVlXFDoXFbUAVs3D/c7da1500d10707df781fd5c1ffe5aac1/Feature-Stores-_-Feature-Engines-480x260_3x.png?w=2880
 ---
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 # Introduction

@@ -4,7 +4,7 @@ image: https://images.ctfassets.net/fkvz3lhe2g1w/3CwVQylSOO980CYoc2fSG8/51a48447
 title: Why you need a unified feature engine, not a unified compute model
 ---
 
-ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-22-announcing-kaskada-oss %}).
+ℹ️NOTE: Kaskada is now an open source project! Read the announcement [blog]({% post_url /2023-03-28-announcing-kaskada-oss %}).
 {: .note }
 
 Many data systems claim to provide a “unified model for batch and streaming” – Apache Spark, Apache Flink, Apache Beam, etc. This is an exciting promise because it suggests a pipeline may be written once and used for both batch processing of historical data and streaming processing of new data. Unfortunately, there is often a significant gap between this promise and reality.
