@@ -5,11 +5,11 @@
     "links": [
       {
         "title": "Get Started",
-        "url": "https://github.com/kaskada-ai/kaskada"
+        "url": "https://kaskada.io/docs-site/kaskada/main/getting-started/index.html"
       },
       {
         "title": "Read the docs",
-        "url": "https://kaskada-ai.github.io/docs-site/"
+        "url": "https://kaskada.io/docs-site/"
       }
     ]
   },
@@ -21,7 +21,7 @@
     "title": "Benefits",
     "cta": {
       "title": "Get Started",
-      "url": "https://github.com/kaskada-ai/kaskada"
+      "url": "https://kaskada.io/docs-site/kaskada/main/getting-started/index.html"
     },
     "list": [
       {
