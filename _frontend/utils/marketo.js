@@ -51,17 +51,16 @@ function initializeNewsletter(form) {
   $newsletter.addEventListener("submit", (event) => {
     event.preventDefault();
     const $email = $newsletter.querySelector('input[name="email"]');
+    const $mktoEmail = document.querySelector("#mktoForm_4727 #Email");
 
-    window.theform = form;
     form.setValues({
       Email: $email.value,
     });
 
+    $($mktoEmail).focus();
+    $($mktoEmail).keyup();
     $("#newsletter-modal").modal("show");
 
-    setTimeout(() => {
-      document.querySelector("#mktoForm_4727 #Email").focus();
-    }, 500);
   });
 
   form.onValidate(function onValidate(isValid) {
