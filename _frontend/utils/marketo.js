@@ -60,7 +60,6 @@ function initializeNewsletter(form) {
     $($mktoEmail).focus();
     $($mktoEmail).keyup();
     $("#newsletter-modal").modal("show");
-
   });
 
   form.onValidate(function onValidate(isValid) {
@@ -74,13 +73,27 @@ function initializeNewsletter(form) {
     const $form = document.querySelector("form[newsletter-form]");
 
     $form.style.display = "none";
-    $status.innerHTML = "<strong>Thanks for subscribing!</strong><br><span>The latest articles on all things data will be delivered straight to your inbox now.</span>";
+    $status.innerHTML =
+      "<strong>Thanks for subscribing!</strong><br><span>The latest articles on all things data will be delivered straight to your inbox now.</span>";
     $("#newsletter-modal").modal("hide");
-    
 
     // Disable redirection
     return false;
-  })  
+  });
+}
+
+function loadZiScript() {
+  window._zi = {
+    formId: "6f351b97-bfe7-44a5-aa8a-71b8513c059f",
+    formLoadTimeout: 4000,
+    development: false,
+  };
+  var zi = document.createElement("script");
+  zi.type = "text/javascript";
+  zi.async = true;
+  zi.src = "https://ws-assets.zoominfo.com/formcomplete.js";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(zi, s);
 }
 
 export function loadMarketoForms() {
@@ -88,6 +101,8 @@ export function loadMarketoForms() {
 
   if (activeForms) {
     loadMarketo(() => {
+      loadZiScript();
+
       activeForms.forEach((formId) => {
         const id = parseInt(formId.replace(`mktoForm_`, ""));
         const callbacks = {
@@ -103,8 +118,10 @@ export function loadMarketoForms() {
 
 export function enableMarketoDebugger() {
   const $container = document.querySelector("div[blog-post-container]");
-  const $contentCol = $container.querySelector("div[class=\"col-md-12\"]");
-  const $newsletterCol = $container.querySelector("div[class=\"col-md-5 d-none\"]");
+  const $contentCol = $container.querySelector('div[class="col-md-12"]');
+  const $newsletterCol = $container.querySelector(
+    'div[class="col-md-5 d-none"]'
+  );
   $contentCol.classList.remove("col-md-12");
   $contentCol.classList.add("col-md-7");
   $newsletterCol.classList.remove("d-none");
