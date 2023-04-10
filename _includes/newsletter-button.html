@@ -2,30 +2,16 @@
   <div class="newsletter-sticky">
     <h4>SIGN UP FOR UPDATES</h4>
     <div newsletter-status></div>
-    <form class="form" newsletter-form>
-      <label for="email">Email Address</label>
-      <div class="form-row">
-        <div class="col-md-7">
-          <input
-            type="email"
-            class="form-control"
-            id="newsletter-email"
-            name="email"
-            placeholder=""
-          />
-        </div>
-        <div class="col-md-5">
-          <button
-            type="submit"
-            class="btn btn-block btn-outline-primary"
-            newsletter-button
-            disabled
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
-    </form>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      data-toggle="modal"
+      data-target="#newsletter-modal"
+      newsletter-button
+      disabled
+    >
+      Subscribe
+    </button>
   </div>
 
   <div
