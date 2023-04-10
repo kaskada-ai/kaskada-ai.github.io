@@ -42,37 +42,41 @@ function loadForm(id, callback) {
 
 function initializeNewsletter(form) {
   const $newsletter = document.querySelector("form[newsletter-form]");
-  const $button = $newsletter.querySelector('button[type="submit"]');
+  const $button = document.querySelector("button[newsletter-button]");
 
   if ($button) {
     $button.disabled = false;
   }
 
-  $newsletter.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const $email = $newsletter.querySelector('input[name="email"]');
-    const $mktoEmail = document.querySelector("#mktoForm_4727 #Email");
+  if ($newsletter) {
+    $newsletter.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const $email = $newsletter.querySelector('input[name="email"]');
+      const $mktoEmail = document.querySelector("#mktoForm_4727 #Email");
 
-    form.setValues({
-      Email: $email.value,
+      form.setValues({
+        Email: $email.value,
+      });
+
+      $($mktoEmail).focus();
+      $($mktoEmail).keyup();
+      $("#newsletter-modal").modal("show");
     });
-
-    $($mktoEmail).focus();
-    $($mktoEmail).keyup();
-    $("#newsletter-modal").modal("show");
-  });
-
-  form.onValidate(function onValidate(isValid) {
-    if (!isValid) {
-      alert("Please fill all the required fields and try again.");
-    }
-  });
+  }
 
   form.onSuccess(function onSuccess() {
     const $status = document.querySelector("div[newsletter-status]");
     const $form = document.querySelector("form[newsletter-form]");
+    const $button = document.querySelector("button[newsletter-button]");
 
-    $form.style.display = "none";
+    if ($button) {
+      $button.style.display = "none";
+    }
+
+    if ($form) {
+      $form.style.display = "none";
+    }
+
     $status.innerHTML =
       "<strong>Thanks for subscribing!</strong><br><span>The latest articles on all things data will be delivered straight to your inbox now.</span>";
     $("#newsletter-modal").modal("hide");
@@ -114,15 +118,4 @@ export function loadMarketoForms() {
       });
     });
   }
-}
-
-export function enableMarketoDebugger() {
-  const $container = document.querySelector("div[blog-post-container]");
-  const $contentCol = $container.querySelector('div[class="col-md-12"]');
-  const $newsletterCol = $container.querySelector(
-    'div[class="col-md-5 d-none"]'
-  );
-  $contentCol.classList.remove("col-md-12");
-  $contentCol.classList.add("col-md-7");
-  $newsletterCol.classList.remove("d-none");
 }
