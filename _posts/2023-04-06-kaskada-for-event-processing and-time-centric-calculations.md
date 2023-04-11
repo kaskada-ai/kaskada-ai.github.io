@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kaskada for Event Processing and Time-centric Calculations: Ecommerce and Beyond"
-image: assets/images/blog/announcing-kaskada-oss.png
+image: assets/images/blog/kaskada-for-event-processing-and-time.png
 author: Brian Godsey
 featured: true
 ---
