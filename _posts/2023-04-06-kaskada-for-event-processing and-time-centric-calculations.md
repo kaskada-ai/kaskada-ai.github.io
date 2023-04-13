@@ -62,7 +62,7 @@ can be defined in Kaskada in roughly the same number of terms as the verbal
 description itself.
 
 See [the Kaskada
-documentation](https://kaskada-ai.github.io/docs-site/kaskada/main/getting-started/installation.html)
+documentation](https://kaskada.io/docs-site/kaskada/main/installing.html)
 for lots more information.
 
 
@@ -81,7 +81,7 @@ pip install kaskada
 The demo uses a very small example data set, but you can load your own event
 data from many common sources, including any pandas dataframe. See [the Loading
 Data
-documentation](https://kaskada-ai.github.io/docs-site/kaskada/main/loading-data.html)
+documentation](https://kaskada.io/docs-site/kaskada/main/loading-data.html)
 for more information. 
 
 
@@ -91,7 +91,7 @@ The Kaskada query language is parsed by the fenl extension, and query
 calculations are defined in a code blocks starting with `%%fenl`.
 
 See [the fenl
-documentation](https://kaskada-ai.github.io/docs-site/kaskada/main/fenl/fenl-quick-start.html)
+documentation](https://kaskada.io/docs-site/kaskada/main/fenl/fenl-quick-start.html)
 for more information.
 
 A simple query for events with a specific entity ID looks like this:
@@ -213,7 +213,7 @@ event_calculations.dataframe
 
 This is only a small sample of possible Kaskada queries and capabilities. See
 [the fenl catalog for a full
-list](https://kaskada-ai.github.io/docs-site/kaskada/main/fenl/catalog.html) of
+list](https://kaskada.io/docs-site/kaskada/main/fenl/catalog.html) of
 functions and operators.
 
 
