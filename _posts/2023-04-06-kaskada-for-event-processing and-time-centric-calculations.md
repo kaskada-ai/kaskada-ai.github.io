@@ -3,7 +3,6 @@ layout: post
 title: "Kaskada for Event Processing and Time-centric Calculations: Ecommerce and Beyond"
 image: assets/images/blog/kaskada-for-event-processing-and-time.png
 author: Brian Godsey
-featured: true
 ---
 
 
@@ -33,10 +32,10 @@ each of the calculations in the list in one line (with some text wrapping):
 
 ```
 event_count_total: DemoEvents | count(),
-purchases_total_count: DemoEvents | when(DemoEvents.event_name == 'purchase') 
+purchases_total_count: DemoEvents | when(DemoEvents.event_name == 'purchase')
     | count(),
 revenue_total: DemoEvents.revenue | sum(),
-purchases_daily: DemoEvents | when(DemoEvents.event_name == 'purchase') 
+purchases_daily: DemoEvents | when(DemoEvents.event_name == 'purchase')
     | count(window=since(daily())),
 revenue_daily: DemoEvents.revenue | sum(window=since(daily())),
 event_count_hourly: DemoEvents | count(window=since(hourly())),
@@ -82,7 +81,7 @@ The demo uses a very small example data set, but you can load your own event
 data from many common sources, including any pandas dataframe. See [the Loading
 Data
 documentation](https://kaskada.io/docs-site/kaskada/main/loading-data.html)
-for more information. 
+for more information.
 
 
 # Define queries and calculations
@@ -125,9 +124,9 @@ follows:
 {
     event_count_total: DemoEvents | count(),
     event_count_hourly: DemoEvents | count(window=since(hourly())),
-    purchases_total_count: DemoEvents 
+    purchases_total_count: DemoEvents
         | when(DemoEvents.event_name == 'purchase') | count(),
-    purchases_daily: DemoEvents 
+    purchases_daily: DemoEvents
         | when(DemoEvents.event_name == 'purchase') | count(window=since(daily())),
     revenue_daily: DemoEvents.revenue | sum(window=since(daily())),
     revenue_total: DemoEvents.revenue | sum(),
@@ -186,14 +185,14 @@ python code.
 {
     event_count_total: DemoEvents | count(),
     event_count_hourly: DemoEvents | count(window=since(hourly())),
-    purchases_total_count: DemoEvents 
+    purchases_total_count: DemoEvents
         | when(DemoEvents.event_name == 'purchase') | count(),
-    purchases_daily: DemoEvents 
-        | when(DemoEvents.event_name == 'purchase') 
+    purchases_daily: DemoEvents
+        | when(DemoEvents.event_name == 'purchase')
         | count(window=since(daily())),
     revenue_daily: DemoEvents.revenue | sum(window=since(daily())),
     revenue_total: DemoEvents.revenue | sum(),
-    
+
     first_event_at: DemoEvents.event_at | first(),
     last_event_at: DemoEvents.event_at | last(),
 }
@@ -226,7 +225,7 @@ elsewhere, including in other Kaskada queries.
 from kaskada import view as kview
 
 kview.create_view(
-  view_name = "DemoFeatures", 
+  view_name = "DemoFeatures",
   expression = event_calculations.expression,
 )
 
@@ -248,7 +247,7 @@ The content of this blog post is based on the public notebook at the link:
 [Kaskada Demo for Event Processing and Time-centric
 Calculations](https://github.com/kaskada-ai/kaskada/blob/main/examples/Kaskada%20Demo%20for%20Event%20Processing%20and%20Time-centric%20Calculations.ipynb).
 Kaskada is a brand new open source project, which makes your early feedback
-exceptionally important to us. 
+exceptionally important to us.
 
 We think that Kaskada could be exceptionally useful for anyone trying to turn
 event data into analytics, ML features, real-time stats of all kinds, and
