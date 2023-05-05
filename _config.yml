@@ -29,6 +29,8 @@ github_username:  kaskada-ai
 collections:
   events:
     output: true
+  redirects:
+    output: true
       #permalink: /events/:path/
 
 sass:
