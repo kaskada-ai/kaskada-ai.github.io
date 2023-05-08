@@ -17,19 +17,19 @@ In this post, we present timelines as a natural development in the progression o
 We delve into the timeline concept, its interaction with external data stores (inputs and outputs), and the lifecycle of queries utilizing timelines.
 
 This post is the first in a series introducing Kaskada, an open-source event processing engine designed around the timeline abstraction.
-The full series will include (1) this introduction to the timeline abstraction, (2) how Kaskada builds an expressive temporal query language on the timeline abstraction, (3) how the timeline data model enables Kaskada to efficiently execute temporal queries, and (4) how timelines allows Kaskada to execute any query to incrementally over event streams.
+The full series will include (1) this introduction to the timeline abstraction, (2) how Kaskada builds an expressive temporal query language on the timeline abstraction, (3) how the timeline data model enables Kaskada to efficiently execute temporal queries, and (4) how timelines allow Kaskada to execute incrementally over event streams.
 
 # Rising Abstractions in Stream Processing
 
 Since 2011, alongside the rise of distributed streaming, there has been a trend towards higher abstractions for operating on events.
 In the same year that [Apache Kafka][kafka] introduced its distributed stream, [Apache Storm][storm] emerged with a structured graph representation for stream consumers, enabling the connection of multiple processing steps.
 Later in 2013, [Apache Samza][samza] provided fault-tolerant, stateful operations over streams, and the [MillWheel paper][millwheel] introduced the concept of watermarks to handle late data.
-Between 2016 and 2017, [Apache Flink][flink], [Apache Spark][spark], and [KSQL][ksql] implemented the ability to execute declarative queries—SQL—over streams.
+Between 2016 and 2017, [Apache Flink][flink], [Apache Spark][spark], and [KSQL][ksql] implemented the ability to execute declarative queries over streams by supporting SQL.
 
 ![History of Streaming Abstractions, showing Apache Kafka, Apache Storm, Apache Samza, MillWheel, Apache Flink, Apache Spark and KSQL][stream_abstraction_history]
 
 Each of these developments enhanced the abstractions used when working with streams -- improving aspects such as composition, state, and late-data handling.
-The shift towards higher-level, declarative queries significantly simplifies stream operations and the management of compute systems.
+The shift towards higher-level, declarative queries significantly simplified stream operations and the management of compute systems.
 However, expressing time-based queries still poses a challenge.
 As the next step in advancing abstractions for event processing, we introduce the timeline abstraction.
 
@@ -39,11 +39,11 @@ Reasoning about time -- for instance cause-and-effect between events -- requires
 For temporal queries, we need to include time as a first-class part of the abstraction.
 This allows reasoning about when an event happened and the ordering -- and time -- between events.
 
-Kaskada is built on the _timeline_ abstraction -- a multiset ordered by time and grouped by entity.
+Kaskada is built on the _timeline_ abstraction: a multiset ordered by time and grouped by entity.
 
 Timelines have a natural visualization, shown below.
 Time is shown on the x-axis and the corresponding values on the y-axis.
-Consider purchase events from two people -- Ben and Davor.
+Consider purchase events from two people: Ben and Davor.
 These are shown as discrete points reflecting the time and amount of the purchase.
 We call these _discrete timelines_ because they represent discrete points.
 
@@ -56,7 +56,7 @@ We call these continuous timelines because each value continues until the next c
 
 ![A plot showing time on the x-axis and values on the y-axis, with steps showing continuous values.][continuous]
 
-Compared to SQL, timelines introduce two requirements -- ordering by time and grouping by entity.
+Compared to SQL, timelines introduce two requirements: **ordering by time and grouping by entity**.
 While the SQL _relation_ -- an unordered multiset or bag -- is useful for unordered data, the additional requirements of timelines make them ideal for reasoning about cause-and-effect.
 Timelines are to temporal data what relations are to static data.
 
@@ -79,9 +79,8 @@ Each input -- whether it is events arriving in a stream or stored in a table, or
 
 The query itself is expressed as a sequence of operations.
 Each operation creates a timeline from timelines.
-The result of final operation is used as the result of the query.
-Thus, the query produces a timeline.
-That timeline may be discrete or continuous.
+The result of the final operation is used as the result of the query.
+Thus, the query produces a timeline which may be either discrete or continuous.
 
 The result of a query is a timeline, which may be output to a sink.
 The rows written to the sink may be a history reflecting the changes within a timeline, or a snapshot reflecting the values at a specific point-in-time.
@@ -89,7 +88,7 @@ The rows written to the sink may be a history reflecting the changes within a ti
 ## Inputting Timelines
 Before a query is performed, each input is mapped to a timeline.
 Every input -- whether events from a stream or table or facts in a table -- can be mapped to a timeline without losing the important temporal information, such as when events happened.
-Events become discrete timelines -- values happening at the time of each event.
+Events become discrete timelines, with the value(s) from each event occurring at the time of the event.
 Facts become continuous timelines, reflecting the time during which each fact applied.
 By losslessly representing all kinds of temporal inputs, timelines allow queries to focus on the computation rather than the kind of input.
 
@@ -101,7 +100,7 @@ The sink for each destination allows configuration of data writing, with specifi
 
 There are several options for converting the timeline into rows of data, affecting the number of rows produced:
 
-1. Include the entire history of changes within a range or just a snapshot of the final value.
+1. Include the entire history of changes within a range or just a snapshot of the value at some point in time.
 2. Include only events (changes) occurring after a certain time in the output.
 3. Include only events (changes) up to a specific time in the output.
 
@@ -125,7 +124,7 @@ For instance, this may be necessary to visualize or identify patterns in how the
 
 Any timeline may be output as a history.
 For a discrete timeline, the history is the collection of events in the timeline.
-For a continuous timeline, the history contains the points at which a value changes -- it is effectively a change log
+For a continuous timeline, the history contains the points at which a value changes -- it is effectively a changelog.
 
 ### Snapshots
 
@@ -146,12 +145,12 @@ The timeline abstraction is a natural progression in stream processing, allowing
 We also explored the flow of data in a temporal query, from input to output, and discussed the various options for outputting timelines to external systems.
 
 Rather than applying a tabular -- static -- query to a sequence of snapshots, Kaskada operates on the history (the change stream).
-This makes it possible to natural to operate on the time between snapshots, rather than only on the data contained in the snapshot.
+This makes it natural to operate on the time between snapshots, rather than only on the data contained in the snapshot.
 Using timelines as the primary abstraction simplifies working with event-based data and allows for seamless transitions between streams and tables.
 
 Stay tuned for the next blog post in this series, where we'll delve into the Kaskada query language and its capabilities in expressive temporal queries.
 Together, we'll continue to explore the benefits and applications of the timeline abstraction in modern data processing tasks.
-After that, you will be able to start experimenting with your own temporal queries.
+After that, you will be able to start experimenting with your own temporal queries!
 
 [continuous]: /assets/images/blog/introducing-timelines/continuous.png "Continuous Timeline"
 [discrete]: /assets/images/blog/introducing-timelines/discrete.png "Discrete Timeline"
