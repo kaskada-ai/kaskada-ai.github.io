@@ -148,9 +148,11 @@ Rather than applying a tabular -- static -- query to a sequence of snapshots, Ka
 This makes it natural to operate on the time between snapshots, rather than only on the data contained in the snapshot.
 Using timelines as the primary abstraction simplifies working with event-based data and allows for seamless transitions between streams and tables.
 
+You can start experimenting with your own temporal queries [today][getting_started].
+[Join the slack community]({{site.join_slack}}) and let us know what you think about the timeline abstraction.
+
 Stay tuned for the next blog post in this series, where we'll delve into the Kaskada query language and its capabilities in expressive temporal queries.
 Together, we'll continue to explore the benefits and applications of the timeline abstraction in modern data processing tasks.
-After that, you will be able to start experimenting with your own temporal queries!
 
 [continuous]: /assets/images/blog/introducing-timelines/continuous.png "Continuous Timeline"
 [discrete]: /assets/images/blog/introducing-timelines/discrete.png "Discrete Timeline"
@@ -158,6 +160,8 @@ After that, you will be able to start experimenting with your own temporal queri
 [stream_abstraction_history]: /assets/images/blog/introducing-timelines/stream_abstraction_history.png "History of Streaming Abstractions"
 [timeline_history]: /assets/images/blog/introducing-timelines/timeline_history.png "Timeline History"
 [timeline_snapshot]: /assets/images/blog/introducing-timelines/timeline_snapshot.png "Timeline Snapshot"
+
+[getting_started]: https://kaskada.io/docs-site/kaskada/main/getting-started/index.html
 
 [flink]: https://flink.apache.org/
 [kafka]: https://kafka.apache.org/
