@@ -95,8 +95,7 @@ By losslessly representing all kinds of temporal inputs, timelines allow queries
 ## Outputting Timelines
 
 After executing a query, the resulting timeline must be output to an external system for consumption.
-<!-- TODO: Link to documentation -->
-The sink for each destination allows configuration of data writing, with specifics depending on the sink and destination (see documentation).
+The sink for each destination allows configuration of data writing, with specifics depending on the sink and destination (see https://kaskada.io/docs-site/kaskada/main/integrating/index.html[connector documentation]).
 
 There are several options for converting the timeline into rows of data, affecting the number of rows produced:
 
