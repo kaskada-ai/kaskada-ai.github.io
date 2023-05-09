@@ -89,5 +89,9 @@
     &:not(:last-of-type) {
       margin-right: 4px;
     }
+
+    .nav-link {
+      font-size: 1rem;
+    }
   }
 }
