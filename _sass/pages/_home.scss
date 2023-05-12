@@ -21,12 +21,11 @@
       margin: 0 0 3rem;
     }
 
-    .btn {
-      display: block;
-
-      &:not(:last-of-type) {
-        margin-bottom: 1rem;
-      }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 200px);
+      justify-content: center;
+      gap: 1rem;
     }
 
     @include media-breakpoint-up(lg) {
@@ -35,16 +34,6 @@
       h1 {
         font-size: 3.5rem;
         line-height: 1.07em;
-      }
-
-      .btn {
-        display: inline-block;
-        min-width: 180px;
-
-        &:not(:last-of-type) {
-          margin-bottom: 0;
-          margin-right: 1.5rem;
-        }
       }
     }
   }

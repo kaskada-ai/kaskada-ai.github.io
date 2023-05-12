@@ -17,16 +17,18 @@ className: home
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-6">
-        {% for link in site.data.homepage.hero.links %}
-          <a
-            class="btn btn-outline-primary"
-            href="{{ link.url }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>{{ link.title }}</span>
-          </a>
-        {% endfor %}
+        <div class="buttons">
+          {% for link in site.data.homepage.hero.links %}
+            <a
+              class="btn btn-outline-primary"
+              href="{{ link.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{{ link.title }}</span>
+            </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
