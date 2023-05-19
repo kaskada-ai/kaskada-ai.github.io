@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "(variant) Modern, open-source event processing",
+    "title": "Modern, open-source event processing",
     "content": "Kaskada is a unified event processing engine that provides all the power of stateful stream processing in a high-level, declarative query language designed specifically for reasoning about events in bulk and in real time.",
     "links": [
       {
