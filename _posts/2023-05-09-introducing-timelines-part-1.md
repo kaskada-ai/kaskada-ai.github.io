@@ -3,7 +3,6 @@ layout: post
 title: "Introducing Timelines: an Evolution in Stream Processing Abstraction"
 image: assets/images/blog/introducing-timelines-part-1.png
 author: Ben Chambers and Therapon Skoteiniotis
-featured: true
 ---
 
 In the last decade, advances in data analytics, machine learning, and AI have occurred, thanks in part to the development of technologies like Apache Spark, Apache Flink, and KSQL for processing streaming data.
@@ -17,7 +16,7 @@ In this post, we present timelines as a natural development in the progression o
 We delve into the timeline concept, its interaction with external data stores (inputs and outputs), and the lifecycle of queries utilizing timelines.
 
 This post is the first in a series introducing Kaskada, an open-source event processing engine designed around the timeline abstraction.
-The full series will include (1) this introduction to the timeline abstraction, (2) how Kaskada builds an expressive temporal query language on the timeline abstraction, (3) how the timeline data model enables Kaskada to efficiently execute temporal queries, and (4) how timelines allow Kaskada to execute incrementally over event streams.
+The full series will include (1) this introduction to the timeline abstraction, (2) [how Kaskada builds an expressive temporal query language on the timeline abstraction][timelines_part2], (3) how the timeline data model enables Kaskada to efficiently execute temporal queries, and (4) how timelines allow Kaskada to execute incrementally over event streams.
 
 # Rising Abstractions in Stream Processing
 
@@ -150,8 +149,10 @@ Using timelines as the primary abstraction simplifies working with event-based d
 You can [get started][getting_started] experimenting with your own temporal queries today.
 [Join the slack community]({{site.join_slack}}) and let us know what you think about the timeline abstraction.
 
-Stay tuned for the next blog post in this series, where we'll delve into the Kaskada query language and its capabilities in expressive temporal queries.
+Check out the [next blog post in this series][timelines_part2], where we'll delve into the Kaskada query language and its capabilities in expressive temporal queries.
 Together, we'll continue to explore the benefits and applications of the timeline abstraction in modern data processing tasks.
+
+[timelines_part2]: {% post_url 2023-05-25-introducing-timelines-part-2 %}
 
 [continuous]: /assets/images/blog/introducing-timelines/continuous.png "Continuous Timeline"
 [discrete]: /assets/images/blog/introducing-timelines/discrete.png "Discrete Timeline"
