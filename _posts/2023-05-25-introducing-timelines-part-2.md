@@ -6,9 +6,6 @@ author: Ben Chambers and Therapon Skoteiniotis
 featured: true
 ---
 
-<!-- TODO: Partial for linking to the catalog -->
-<!-- TODO: Update image for the hero -->
-
 Understanding time-based patterns in your data can unlock valuable insights, but expressing temporal queries can often be a challenging task.
 Imagine being able to effortlessly analyze your users' behavior over time, to perform precise temporal joins, or to examine patterns of activity between different events, all while being intuitive and naturally handling time.
 This is where the concept of timelines, a high-level abstraction for working with temporal data, comes to your aid.
