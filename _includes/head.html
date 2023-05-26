@@ -28,4 +28,10 @@
   {% endif %}
 
   {%- feed_meta -%}
+
+  {%- if page.custom_style %}
+  <style>
+    {{ page.custom_style }}
+  </style>
+  {%- endif -%}
 </head>
