@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing Timelines: an Evolution in Stream Processing Abstraction"
+title: "Introducing Timelines (Part 1): an Evolution in Stream Processing Abstraction"
 image: assets/images/blog/introducing-timelines-part-1.png
 author: Ben Chambers and Therapon Skoteiniotis
 ---
