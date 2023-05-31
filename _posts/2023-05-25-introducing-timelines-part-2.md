@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing Timelines: Declarative, Temporal Queries"
+title: "Introducing Timelines (Part 2): Declarative, Temporal Queries"
 image: assets/images/blog/introducing-timelines-part-2.png
 author: Ben Chambers and Therapon Skoteiniotis
 featured: true
