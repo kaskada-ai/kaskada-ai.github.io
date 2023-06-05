@@ -3,7 +3,6 @@ layout: post
 title: "Introducing Timelines (Part 2): Declarative, Temporal Queries"
 image: assets/images/blog/introducing-timelines-part-2.png
 author: Ben Chambers and Therapon Skoteiniotis
-featured: true
 ---
 
 Understanding time-based patterns in your data can unlock valuable insights, but expressing temporal queries can often be a challenging task.
