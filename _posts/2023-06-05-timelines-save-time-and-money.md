@@ -8,14 +8,14 @@ author: Brian Godsey
 
 
 When processing and building real-time feature values from event-based data, it
-is easy to underestimate the power of using tools that are built to understand
-how time works. Many software tools can parse and manipulate time-based data,
-but the vast majority have little more than convenience functionality for
-parsing and doing arithmetic on date-time values. On the other hand, Kaskada has
-a built-in, natural understanding of time that just works by default, which can
-reduce development time and effort, simplify deployment and debugging, and
-reduce the compute and storage resources needed to support real-time event-based
-systems.
+is easy to underestimate the power of tools that are built to understand how
+time works. Many software tools can parse and manipulate time-based data, but
+the vast majority have little more than convenience functionality for parsing
+and doing arithmetic on date-time values. On the other hand, Kaskada has a
+built-in, natural understanding of time that just works by default. This
+understanding is powerful: it can reduce development time and effort, simplify
+deployment and debugging, and reduce the compute and storage resources needed to
+support real-time event-based systems.
 
 In this post, I'll discuss some costly pitfalls when building data pipelines
 with event-based data. In particular, I will share some anecdotes from my past
@@ -40,7 +40,7 @@ however, plenty of time and money lost on a few fronts.
 
 # Case study: calculating daily user statistics and aggregations
 
-In this example, I’d like to show how hard it can be to calculate (seemingly)
+In this example, I illustrate how hard it can be to calculate (seemingly)
 simple rolling averages when your software tools don't understand time. 
 
 On a project some years ago, our goal was a common one: daily reporting of user
@@ -77,9 +77,9 @@ understands that a day exists even if there is no activity on that day. We can
 specify a “day” or a 30-day window without needing to “manually” build a table
 of days. One way to calculate a 30-day rolling average for `activity_value` is:
 
-```
+```fenl
 Dataset.activity_value                       # specify the data
-| sum(window=sliding(30, daily())) / 30      # add the values in the 30-day window, divide by 30
+| sum(window=sliding(30, daily())) / 30      # sum values and divide
 ```
 
 We do not need to worry about rows in the table (`Dataset`) being
@@ -227,9 +227,9 @@ time into rows and back again.
 
 Let’s revisit the Kaskada code block from earlier in the article:
 
-```
+```fenl
 Dataset.activity_value                       # specify the data
-| sum(window=sliding(30, daily())) / 30      # add the values in the 30-day window, divide by 30
+| sum(window=sliding(30, daily())) / 30      # sum values and divide
 ```
 
 This query syntax has all of the important semantic information—data source,
@@ -289,6 +289,5 @@ documentation](https://kaskada.io/docs-site/kaskada/main/overview/what-is-kaskad
 in particular the [Getting Started
 page](https://kaskada.io/docs-site/kaskada/main/getting-started/index.html). 
 
-You can also [join our Slack
-channel](https://join.slack.com/t/kaskada-hq/shared_invite/zt-1t1lms085-bqs2jtGO2TYr9kuuam~c9w)
-to discuss and learn more about Kaskada.
+You can also [join our Slack channel]({{site.join_slack}}) to discuss and learn
+more about Kaskada.
