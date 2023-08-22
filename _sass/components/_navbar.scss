@@ -1,8 +1,66 @@
 .navbar {
   background: #ffffff;
+  padding: 0;
+
+  &.navbar-expand-lg {
+    flex-flow: column;
+  }
+
+  > .container {
+    padding: 21px 1rem;
+  }
+
+  .announcement {
+    background: #26364a;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.4em;
+    color: #ffffff;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 1rem 3rem;
+    }
+
+    > p {
+      flex: 2;
+      margin: 0;
+    }
+
+    a {
+      font: inherit;
+      color: #ffffff;
+      text-decoration: underline;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    button {
+      color: #ffffff;
+      opacity: 1;
+      text-shadow: none;
+
+      &:not(:disabled):hover,
+      &:not(:disabled):focus {
+        opacity: 1;
+      }
+    }
+  }
 
   .navbar-nav {
-    height: calc(var(--window-height, 100%) - 90px); // navbar height without padding
+    height: calc(
+      var(--window-height, 100%) - 90px
+    ); // navbar height without padding
     padding-top: 3rem;
     align-items: stretch;
 
