@@ -12,9 +12,9 @@ Still, a challenge remains: building and managing real-time AI applications.
 
 ## The Challenge of using Real-Time Data in AI Applications
 
-Real-time data for AI Applications has always been surrounded by an array of technical and infrastructural challenges. For example:
+Real-time data for AI Applications has always been surrounded by an array of challenges. For example:
 
-1. **Infrastructure Hurdles**: Accessing real-time data often means struggling to acquire data and dealing with complex infrastructure, requiring significant time and expertise to get right.
+1. **Infrastructure Hurdles**: Accessing real-time data often means struggling to acquire data and deploying complex infrastructure, requiring significant time and expertise to get right.
 
 2. **Cumbersome Tools**: Traditional tools for streaming data are bulky, with steep learning curves and complex JVM-based setups.
 
@@ -30,19 +30,19 @@ We originally built Kaskada as a managed service. Earlier this year, we [release
 
 Today, we take the next step in improving Kaskada’s usability by providing its core compute engine as an embedded Python library. Because Kaskada is written in Rust, we’re able to leverage the excellent [PyO3](https://pyo3.rs/) project to compile Python-native bindings for our compute engine and support Python-defined UDF’s. Additionally, Kaskada is built using [Apache Arrow](https://arrow.apache.org/), which allows zero-copy data transfers between Kaskada and other Python libraries such as [Pandas](https://pandas.pydata.org/), allowing you to operate on your data in-place.
 
-We’re also changing how you query Kaskda by implementing our query DSL as Python functions. This change makes it easier to get started by eliminating the learning curve of a new language and improving integration with code editors, syntax highlighters, and AI coding assistants.
+We’re also changing how you query Kaskada by implementing our query DSL as Python functions. This change makes it easier to get started by eliminating the learning curve of a new language and improving integration with code editors, syntax highlighters, and AI coding assistants.
 
 The result is an easy-to-use Python-native library with all the efficiency and performance of our low-level Rust implementation, fully integrated with the rich Python ecosystem of AI/ML tools, visualization libraries etc.
 
 ## Features for Real-Time AI Applications
 
-Getting started with Generative AI is easier today than it’s ever been:
+Real-Time AI is easier today than it's ever been:
 
 * Foundation models built by OpenAI, Facebook and others can be used as a starting point, allowing sophisticated applications to be built with a fraction of the data that would otherwise be necessary.
-* Services such as OpenAI eliminate the need to manage complex infrastructure
+* Services such as OpenAI eliminate the need to manage complex infrastructure.
 * Platforms like HuggingFace have made it easier than ever to share and collaborate on open LLMs.
 
-The New Kaskada compliments these resources, making it easier than ever to utilize real-time data by providing several key components:
+The New Kaskada complements these resources, making it easier than ever to utilize real-time data by providing several key components:
 
 ### 1. Real-time Aggregation
 
@@ -77,7 +77,7 @@ Kaskada ties together the modern real-time AI stack, providing a data foundation
 
 ## Join the Community
 
-We believe in the transformative power of real-time AI and the possibilities it holds. We believe that real-time data will allow AI to go beyond question-answering to provide proactive, intelligent applications. We want to hear what excites you about real-time AI - Join our Slack community and share your use cases, insights and experiences with the New Kaskada.
+We believe in the transformative power of real-time AI and the possibilities it holds. We believe that real-time data will allow AI to go beyond question-answering to provide proactive, intelligent applications. We want to hear what excites you about real-time and generative AI - [Join our Slack community](https://kaskada.io/community/) and share your use cases, insights and experiences with the New Kaskada.
 
 *"Real-Time AI without the fuss."* Embrace the future with Kaskada.
 
