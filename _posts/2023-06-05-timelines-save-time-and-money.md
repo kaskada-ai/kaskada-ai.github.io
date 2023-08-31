@@ -3,7 +3,6 @@ layout: post
 title: "It’s Time for a Time-centric Stack: Timeline Abstractions Save Time and Money"
 image: assets/images/blog/Blog_Post_Time_Centric.png
 author: Brian Godsey
-featured: true
 ---
 
 
